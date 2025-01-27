@@ -14,9 +14,9 @@ const Hero = () => {
         {/* Hero Content */}
         <section className="py-8 content overflow-hidden">
           <div className="">
-            <div className="md:flex justify-between items-center">
+            <div className="md:flex justify-between  items-center">
               {/* Left Section: Text */}
-              <div className="md:w-1/2 mx-auto px-4 md:px-0  md:mt-[120px] md:ml-[78px] lg:pl-[160px] text-center lg:text-left md:text-left">
+              <div className="md:w-1/2 mx-auto px-4 md:px-0  md:mt-[120px] md:ml-[68px] lg:pl-[85px] text-center lg:text-left md:text-left">
                 <h1 className="text-4xl lg:text-5xl font-bold text-[#1A4576]">
                   Hi, I'm Asif Hosen
                 </h1>
@@ -37,24 +37,24 @@ const Hero = () => {
                   Let's collaborate to turn your vision into a stunning web
                   application that stands out!
                 </p>
-                <div className="mt-6">
-                  <a
+                <div className="flex flex-col gap-2 md:flex-row mt-6">
+                  <button
                     href="#contact"
-                    className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-500 transition duration-300"
+                    className="px-6 py-3 w-full bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-500 transition duration-300"
                   >
                     Contact Me
-                  </a>
-                  <a
+                  </button>
+                  <button
                     href="#projects"
-                    className="ml-4 px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300"
+                    className="md:ml-4 ml-0 px-6 py-3 w-full border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300"
                   >
                     My Projects
-                  </a>
+                  </button>
                 </div>
               </div>
 
               {/* Right Section: Image */}
-              <div className="flex md:w-1/2 justify-center mt-10 lg:mt-0 relative">
+              <div className="flex md:w-1/2 justify-center md:ml-[150px] mt-10 lg:mt-0 relative">
                 <div className="absolute inset-0 mt-[130px] md:mr-[26px] flex justify-center items-center">
                   <div className="md:w-[300px] w-[250px] mt-[170px] md:mt-[200px] md:ml-[20px] h-[250px] md:h-[300px] rounded-full bg-[#275298] animate-pulseLight"></div>
                 </div>

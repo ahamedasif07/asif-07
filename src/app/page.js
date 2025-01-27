@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <Hero />
       <div className="flex justify-center my-[90px]">
-        <SectionTitle />
+        <SectionTitle title="ABOUT ME" />
       </div>
       <h2>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore iure et

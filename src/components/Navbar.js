@@ -54,7 +54,7 @@ const NavBar = () => {
           <div className="flex gap-4 justify-center items-center">
             {/* Desktop Menu */}
             <div className="md:block hidden">
-              <ul className="flex gap-7">
+              <ul className="flex items-center gap-7">
                 {["Home", "About", "Skills", "Projects"].map((item) => (
                   <li
                     key={item}
