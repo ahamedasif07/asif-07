@@ -46,7 +46,7 @@ const Hero = () => {
                   </button>
                   <button
                     href="#projects"
-                    className="md:ml-4 ml-0 px-6 py-3 w-full border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300"
+                    className="md:ml-4 ml-0h px-6 py-3 w-full border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300"
                   >
                     My Projects
                   </button>

@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import ImageComparisonSlider from "@/components/imageCompareSlider/ImageCompareSlider";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import React from "react";
 
@@ -9,6 +10,7 @@ const Home = () => {
       <div className="flex justify-center my-[90px]">
         <SectionTitle title="ABOUT ME" />
       </div>
+      <ImageComparisonSlider />
       <h2>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore iure et
         alias! Minima fuga aliquid ea eligendi vitae harum perferendis unde,
