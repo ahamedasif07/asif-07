@@ -15,13 +15,13 @@ const About = () => {
                 href="#contact"
                 className="px-6 py-3 w-full bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-500 transition duration-300"
               >
-                Contact Me
+                Exparince
               </button>
               <button
                 href="#projects"
                 className="md:ml-4 ml-0 px-6 py-3 w-full border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300"
               >
-                My Projects
+                Education
               </button>
             </div>
           </div>
