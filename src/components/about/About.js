@@ -7,9 +7,9 @@ const About = () => {
   return (
     <div className="md:px-[140px] px-4">
       <div className="max-w-screen-2xl mx-auto overflow-hidden">
-        <div className="flex border-2 border-green-600  md:justify-between justify-center items-start gap-6 w-full">
+        <div className="flex border-2 border-green-600  md:justify-between justify-center items-start gap-[80px] w-full">
           <div className=" w-1/2  ">
-            <div className="w-full flex-shrink-0  mx-auto md:mx-0 justify-center items-center ">
+            <div className=" flex-shrink-0  mx-auto md:mx-0 justify-center items-center ">
               <ImageComparisonSlider />
             </div>
           </div>
@@ -20,7 +20,7 @@ const About = () => {
                 className={`px-6 py-3 w-full rounded-lg shadow-md transition duration-300 ${
                   activeSection === "experience"
                     ? "bg-blue-600 text-white"
-                    : "bg-gray-200 text-gray-800"
+                    : "bg-[#0A0A0A] border border-blue-600 text-white"
                 }`}
               >
                 Experience
