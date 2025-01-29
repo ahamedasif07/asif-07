@@ -4,6 +4,30 @@ import ImageComparisonSlider from "../imageCompareSlider/ImageCompareSlider";
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("experience");
+  const educationData = [
+    {
+      schoolName: "Mymensingh Polytechnic Institute",
+      examinationName: "Diploma Engineer - CST",
+      gpa: "3.80",
+      startDate: "Jan 2021",
+      endDate: "Jan 2024",
+    },
+    {
+      schoolName: "Batajore BM High School",
+      examinationName: "SSC - Computer Technology",
+      gpa: "A+",
+      startDate: "Jan 2018",
+      endDate: "Jan 2020",
+    },
+    {
+      schoolName: "Batajore BM High School",
+      examinationName: "JSC - General",
+      gpa: "4.50",
+      startDate: "Jan 2021",
+      endDate: "Jan 2024",
+    },
+  ];
+
   return (
     <div className="md:px-[140px] px-4">
       <div className="max-w-screen-2xl mx-auto overflow-hidden">
@@ -38,16 +62,46 @@ const About = () => {
             </div>
 
             {/* Conditional Rendering of Content */}
-            <div className="mt-4 p-4 border rounded-lg bg-gray-100">
+            <div className="mt-4  rounded-md ">
               {activeSection === "experience" ? (
                 <div>
-                  <h3 className="text-lg font-semibold">Experience Details</h3>
-                  <p>Worked as a Frontend Developer at XYZ Company.</p>
+                  {/* <h3 className="text-lg font-semibold">Experience Details</h3>
+                  <p>Worked as a Frontend Developer at XYZ Company.</p> */}
+                  <p className="text-[14px] text-gray-300">
+                    I'm a CSE student with over three years + of web development
+                    experience. As a creative person and project leader, I've
+                    been dedicated to learning various programming languages and
+                    modern technologies.
+                  </p>
+                  <div className="mt-4">
+                    {educationData.map((education) => (
+                      <div
+                        className="border border-blue-600 p-2 mb-2"
+                        key={education.schoolName}
+                      >
+                        <h3 className="text-[15px] font-semibold text-gray-100">
+                          {education.schoolName}
+                        </h3>
+                        <p className="text-[12px] mt-[4px] text-blue-600 ">
+                          {education.examinationName} ({education.gpa})
+                        </p>
+                        <p className="text-[12px] text-gray-300">
+                          ({education.startDate}-{education.endDate})
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ) : (
                 <div>
-                  <h3 className="text-lg font-semibold">Education Details</h3>
-                  <p>Bachelor's in Computer Science from ABC University.</p>
+                  <p className="text-[14px] text-gray-400">
+                    I'm a CST student with a 4-year Diploma in Computer Science
+                    and Technology. As class CR, I lead with creativity and
+                    innovation, focusing on pursuing a BSC in Software
+                    Engineering and modern technologies.
+                  </p>
+                  {/* <h3 className="text-lg font-semibold">Education Details</h3>
+                  <p>Bachelor's in Computer Science from ABC University.</p> */}
                 </div>
               )}
             </div>
