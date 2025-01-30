@@ -1,6 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ImageComparisonSlider from "../imageCompareSlider/ImageCompareSlider";
+import { FaBook } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("experience");
@@ -27,6 +30,15 @@ const About = () => {
       endDate: "Jan 2024",
     },
   ];
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Animation duration in milliseconds
+      offset: 100, // Distance to start the animation
+      easing: "ease-in-out", // Animation easing
+      once: true, // Whether animation should happen once or every scroll
+    });
+  }, []);
 
   return (
     <div className="md:px-[140px] px-4">
@@ -74,22 +86,32 @@ const About = () => {
                     modern technologies.
                   </p>
                   <div className="mt-4">
-                    {educationData.map((education) => (
-                      <div
-                        className="border border-blue-600 p-2 mb-2"
-                        key={education.gpa}
-                      >
-                        <h3 className="text-[15px] font-semibold text-gray-100">
-                          {education.schoolName}
-                        </h3>
-                        <p className="text-[12px] mt-[4px] text-blue-600 ">
-                          {education.examinationName} ({education.gpa})
-                        </p>
-                        <p className="text-[12px] text-gray-300">
-                          ({education.startDate}-{education.endDate})
-                        </p>
-                      </div>
-                    ))}
+                    {educationData.map((education, index) => {
+                      // Define an array of AOS animations based on index positions
+                      const aosEffects = ["fade-right", "fade-up", "fade-left"];
+
+                      return (
+                        <div
+                          className="border flex gap-5 items-center border-blue-600 p-2 mb-2"
+                          key={education.gpa}
+                        >
+                          <p className="text-3xl p-[10px] hover:text-gray-200 transition-all duration-300 ease-in-out hover:border-blue-600 border border-gray-300 text-blue-600">
+                            <FaBook />
+                          </p>
+                          <div data-aos={aosEffects[index % aosEffects.length]}>
+                            <h3 className="text-[15px] font-semibold text-gray-100">
+                              {education.schoolName}
+                            </h3>
+                            <p className="text-[12px] my-[3px] text-blue-600 ">
+                              {education.examinationName} ({education.gpa})
+                            </p>
+                            <p className="text-[12px] text-gray-300">
+                              ({education.startDate}-{education.endDate})
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               ) : (
