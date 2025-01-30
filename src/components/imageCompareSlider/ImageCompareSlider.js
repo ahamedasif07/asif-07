@@ -21,11 +21,11 @@ const ImageComparisonSlider = () => {
   };
 
   return (
-    <div className="cursor-pointer mx-auto">
+    <div className="cursor-pointer mx-auto h-[450px]">
       <div
         ref={sliderRef}
         onMouseMove={handleMouseMove}
-        className="relative border-2 border-blue-600 w-full  mx-auto h-[400px] overflow-hidden group"
+        className="relative border-2 border-blue-600 w-full  mx-auto h-full overflow-hidden group"
       >
         {/* Before Image */}
         <div className="absolute inset-0 flex justify-center items-center overflow-hidden">

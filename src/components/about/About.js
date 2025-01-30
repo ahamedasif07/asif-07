@@ -77,7 +77,7 @@ const About = () => {
                     {educationData.map((education) => (
                       <div
                         className="border border-blue-600 p-2 mb-2"
-                        key={education.schoolName}
+                        key={education.gpa}
                       >
                         <h3 className="text-[15px] font-semibold text-gray-100">
                           {education.schoolName}
