@@ -34,8 +34,10 @@ const Hero = () => {
                 </h1>
 
                 <p className="text-gray-700 px-4     lg:ml-[0px]  md:px-0 text-lg leading-relaxed">
-                  Let's collaborate to turn your vision into a stunning web
-                  application that stands out!
+                  Always love to learn something new . Love to get error and
+                  handle error . If I learn something special I share this with
+                  my friends . One secret about me I'm very fast learner
+                  programming is my Heard.
                 </p>
                 <div className="flex flex-col gap-2 md:flex-row mt-6">
                   <button

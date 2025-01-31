@@ -31,6 +31,24 @@ const About = () => {
     },
   ];
 
+  const workExperience = [
+    {
+      work: "Gorur Ghash",
+      position: "Front-End - Developer",
+      duration: "May 2024 - july 2024",
+    },
+    {
+      work: "Sultan Dine",
+      position: "Front-End - Developer",
+      duration: "Mar 2024 - april 2024",
+    },
+    {
+      work: "Diagram",
+      position: "Front-End - Developer",
+      duration: "Jan 2024 - Feb 2024",
+    },
+  ];
+
   useEffect(() => {
     AOS.init({
       duration: 800, // Animation duration in milliseconds
@@ -59,7 +77,7 @@ const About = () => {
                     : "bg-[#0A0A0A] border border-blue-600 text-white"
                 }`}
               >
-                Experience
+                Education
               </button>
               <button
                 onClick={() => setActiveSection("education")}
@@ -69,13 +87,13 @@ const About = () => {
                     : "text-blue-600"
                 }`}
               >
-                Education
+                Experience
               </button>
             </div>
 
             {/* Conditional Rendering of Content */}
             <div className="mt-4  rounded-md ">
-              {activeSection === "experience" ? (
+              {activeSection === "education" ? (
                 <div>
                   {/* <h3 className="text-lg font-semibold">Experience Details</h3>
                   <p>Worked as a Frontend Developer at XYZ Company.</p> */}
@@ -85,7 +103,7 @@ const About = () => {
                     been dedicated to learning various programming languages and
                     modern technologies.
                   </p>
-                  <div className="mt-4">
+                  <div className="mt-4 overflow-hidden">
                     {educationData.map((education, index) => {
                       // Define an array of AOS animations based on index positions
                       const aosEffects = ["fade-right", "fade-up", "fade-left"];
@@ -116,12 +134,50 @@ const About = () => {
                 </div>
               ) : (
                 <div>
-                  <p className="text-[14px] text-gray-400">
-                    I'm a CST student with a 4-year Diploma in Computer Science
-                    and Technology. As class CR, I lead with creativity and
-                    innovation, focusing on pursuing a BSC in Software
-                    Engineering and modern technologies.
-                  </p>
+                  <div>
+                    {/* <h3 className="text-lg font-semibold">Experience Details</h3>
+                  <p>Worked as a Frontend Developer at XYZ Company.</p> */}
+                    <p className="text-[14px] text-gray-400">
+                      I'm a CST student with a 4-year Diploma in Computer
+                      Science and Technology. As class CR, I lead with
+                      creativity and innovation, focusing on pursuing a BSC in
+                      Software Engineering and modern technologies.
+                    </p>
+                    <div className="mt-4 overflow-hidden">
+                      {educationData.map((education, index) => {
+                        // Define an array of AOS animations based on index positions
+                        const aosEffects = [
+                          "fade-right",
+                          "fade-up",
+                          "fade-left",
+                        ];
+
+                        return (
+                          <div
+                            className="border flex gap-5 items-center border-blue-600 p-2 mb-2"
+                            key={education.gpa}
+                          >
+                            <p className="text-3xl p-[10px] hover:text-gray-200 transition-all duration-300 ease-in-out hover:border-blue-600 border border-gray-300 text-blue-600">
+                              <FaBook />
+                            </p>
+                            <div
+                              data-aos={aosEffects[index % aosEffects.length]}
+                            >
+                              <h3 className="text-[15px] font-semibold text-gray-100">
+                                {education.schoolName}
+                              </h3>
+                              <p className="text-[12px] my-[3px] text-blue-600 ">
+                                {education.examinationName} ({education.gpa})
+                              </p>
+                              <p className="text-[12px] text-gray-300">
+                                ({education.startDate}-{education.endDate})
+                              </p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                   {/* <h3 className="text-lg font-semibold">Education Details</h3>
                   <p>Bachelor's in Computer Science from ABC University.</p> */}
                 </div>
