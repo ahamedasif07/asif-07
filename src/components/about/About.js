@@ -70,9 +70,9 @@ const About = () => {
           <div className="w-1/2 border-2 border-red-600  p-4">
             <div className="flex flex-shrink-0 flex-col gap-2 md:flex-row">
               <button
-                onClick={() => setActiveSection("experience")}
+                onClick={() => setActiveSection("education")}
                 className={`px-6 py-3 w-full rounded-lg shadow-md transition duration-300 ${
-                  activeSection === "experience"
+                  activeSection === "education"
                     ? "bg-blue-600 text-white"
                     : "bg-[#0A0A0A] border border-blue-600 text-white"
                 }`}
@@ -80,9 +80,9 @@ const About = () => {
                 Education
               </button>
               <button
-                onClick={() => setActiveSection("education")}
+                onClick={() => setActiveSection("experience")}
                 className={`px-6 py-3 w-full border border-blue-600 rounded-lg transition duration-300 ${
-                  activeSection === "education"
+                  activeSection === "experience"
                     ? "bg-blue-600 text-white"
                     : "text-blue-600"
                 }`}
@@ -144,7 +144,7 @@ const About = () => {
                       Software Engineering and modern technologies.
                     </p>
                     <div className="mt-4 overflow-hidden">
-                      {educationData.map((education, index) => {
+                      {workExperience.map((experience, index) => {
                         // Define an array of AOS animations based on index positions
                         const aosEffects = [
                           "fade-right",
@@ -155,7 +155,7 @@ const About = () => {
                         return (
                           <div
                             className="border flex gap-5 items-center border-blue-600 p-2 mb-2"
-                            key={education.gpa}
+                            key={experience.gpa}
                           >
                             <p className="text-3xl p-[10px] hover:text-gray-200 transition-all duration-300 ease-in-out hover:border-blue-600 border border-gray-300 text-blue-600">
                               <FaBook />
@@ -164,13 +164,13 @@ const About = () => {
                               data-aos={aosEffects[index % aosEffects.length]}
                             >
                               <h3 className="text-[15px] font-semibold text-gray-100">
-                                {education.schoolName}
+                                {experience.work}
                               </h3>
                               <p className="text-[12px] my-[3px] text-blue-600 ">
-                                {education.examinationName} ({education.gpa})
+                                {experience.position}
                               </p>
                               <p className="text-[12px] text-gray-300">
-                                ({education.startDate}-{education.endDate})
+                                ({experience.duration})
                               </p>
                             </div>
                           </div>
