@@ -61,13 +61,13 @@ const About = () => {
   return (
     <div className="md:px-[140px] px-4">
       <div className="max-w-screen-2xl mx-auto overflow-hidden">
-        <div className="flex border-2 border-green-600  md:justify-between justify-center items-start gap-[80px] w-full">
-          <div className=" w-1/2  ">
+        <div className="flex lg:flex-row flex-col border-2 border-green-600  md:justify-between justify-center items-start gap-[80px] w-full">
+          <div className=" lg:w-1/2 w-full  ">
             <div className=" flex-shrink-0  mx-auto md:mx-0 justify-center items-center ">
               <ImageComparisonSlider />
             </div>
           </div>
-          <div className="w-1/2 border-2 border-red-600  p-4">
+          <div className="lg:w-1/2 w-full border-2 border-red-600  p-4">
             <div className="flex flex-shrink-0 flex-col gap-2 md:flex-row">
               <button
                 onClick={() => setActiveSection("education")}
