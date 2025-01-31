@@ -1,14 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import asifImage from "../../public/assets/asif13_image-.png";
-import SectionTitle from "@/components/SectionTitle/SectionTitle";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Animation duration in milliseconds
+      offset: 100, // Distance to start the animation
+      easing: "ease-in-out", // Animation easing
+      once: true, // Whether animation should happen once or every scroll
+    });
+  }, []);
   return (
     <div className="max-w-screen-2xl mx-auto">
-      <div className="relative hero">
+      <div className="relative hero overflow-hidden">
         {/* Bubbles Component */}
 
         {/* Hero Content */}
@@ -56,7 +66,10 @@ const Hero = () => {
               </div>
 
               {/* Right Section: Image */}
-              <div className="flex md:w-1/2 justify-center md:ml-[150px] mt-10 lg:mt-0 relative">
+              <div
+                data-aos="zoom-in"
+                className="flex md:w-1/2 justify-center md:ml-[150px] mt-10 lg:mt-0 relative"
+              >
                 <div className="absolute inset-0 mt-[130px] md:mr-[26px] flex justify-center items-center">
                   <div className="md:w-[300px] w-[250px] mt-[170px] md:mt-[200px] md:ml-[20px] h-[250px] md:h-[300px] rounded-full bg-[#275298] animate-pulseLight"></div>
                 </div>
