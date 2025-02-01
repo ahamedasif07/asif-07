@@ -67,13 +67,13 @@ const About = () => {
   return (
     <div className="md:px-[140px] px-4">
       <div className="max-w-screen-2xl mx-auto overflow-hidden">
-        <div className="flex lg:flex-row flex-col border-2 border-green-600  md:justify-between justify-center items-start gap-[80px] w-full">
+        <div className="flex lg:flex-row flex-col   md:justify-between justify-center items-start gap-[80px] w-full">
           <div className=" lg:w-1/2 w-full  ">
             <div className=" flex-shrink-0  mx-auto md:mx-0 justify-center items-center ">
               <ImageComparisonSlider />
             </div>
           </div>
-          <div className="lg:w-1/2 w-full border-2 border-red-600  p-4">
+          <div className="lg:w-1/2 w-full   p-4">
             <div className="flex flex-shrink-0 flex-col gap-2 md:flex-row">
               <button
                 onClick={() => setActiveSection("education")}
@@ -143,7 +143,7 @@ const About = () => {
                   <div>
                     {/* <h3 className="text-lg font-semibold">Experience Details</h3>
                   <p>Worked as a Frontend Developer at XYZ Company.</p> */}
-                    <p className="text-[14px] text-gray-400">
+                    <p className="text-[14px] ">
                       I'm a CST student with a 4-year Diploma in Computer
                       Science and Technology. As class CR, I lead with
                       creativity and innovation, focusing on pursuing a BSC in
