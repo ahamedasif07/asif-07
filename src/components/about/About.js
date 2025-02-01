@@ -9,6 +9,7 @@ const About = () => {
   const [activeSection, setActiveSection] = useState("experience");
   const educationData = [
     {
+      id: 1,
       schoolName: "Mymensingh Polytechnic Institute",
       examinationName: "Diploma Engineer - CST",
       gpa: "3.80",
@@ -16,6 +17,7 @@ const About = () => {
       endDate: "Jan 2024",
     },
     {
+      id: 2,
       schoolName: "Batajore BM High School",
       examinationName: "SSC - Computer Technology",
       gpa: "A+",
@@ -23,6 +25,7 @@ const About = () => {
       endDate: "Jan 2020",
     },
     {
+      id: 3,
       schoolName: "Batajore BM High School",
       examinationName: "JSC - General",
       gpa: "4.50",
@@ -33,16 +36,19 @@ const About = () => {
 
   const workExperience = [
     {
+      id: 1,
       work: "Gorur Ghash",
       position: "Front-End - Developer",
       duration: "May 2024 - july 2024",
     },
     {
+      id: 2,
       work: "Sultan Dine",
       position: "Front-End - Developer",
       duration: "Mar 2024 - april 2024",
     },
     {
+      id: 3,
       work: "Diagram",
       position: "Front-End - Developer",
       duration: "Jan 2024 - Feb 2024",
@@ -97,7 +103,7 @@ const About = () => {
                 <div>
                   {/* <h3 className="text-lg font-semibold">Experience Details</h3>
                   <p>Worked as a Frontend Developer at XYZ Company.</p> */}
-                  <p className="text-[14px] text-gray-300">
+                  <p className="text-[14px] ">
                     I'm a CSE student with over three years + of web development
                     experience. As a creative person and project leader, I've
                     been dedicated to learning various programming languages and
@@ -111,7 +117,7 @@ const About = () => {
                       return (
                         <div
                           className="border flex gap-5 items-center border-blue-600 p-2 mb-2"
-                          key={education.gpa}
+                          key={education.id}
                         >
                           <p className="text-3xl p-[10px] hover:text-gray-200 transition-all duration-300 ease-in-out hover:border-blue-600 border border-gray-300 text-blue-600">
                             <FaBook />
@@ -155,7 +161,7 @@ const About = () => {
                         return (
                           <div
                             className="border flex gap-5 items-center border-blue-600 p-2 mb-2"
-                            key={experience.gpa}
+                            key={experience.id}
                           >
                             <p className="text-3xl p-[10px] hover:text-gray-200 transition-all duration-300 ease-in-out hover:border-blue-600 border border-gray-300 text-blue-600">
                               <FaBook />

@@ -2,15 +2,20 @@ import About from "@/components/about/About";
 import Hero from "@/components/Hero";
 import ImageComparisonSlider from "@/components/imageCompareSlider/ImageCompareSlider";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
+import StatsSection from "@/components/StateSection/StateSection";
 import React from "react";
 
 const Home = () => {
   return (
     <div>
       <Hero />
+      <div className="mt-[30px]">
+        <StatsSection />
+      </div>
       <div className="flex justify-center my-[90px]">
         <SectionTitle title="ABOUT ME" />
       </div>
+
       <About />
       <h2>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore iure et
