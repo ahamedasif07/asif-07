@@ -9,7 +9,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <div
-      className="relative w-[80vw]  max-w-[21.875rem] h-[28.125rem] rounded-lg overflow-hidden shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105"
+      className="relative w-full  max-w-[31.875rem] h-[28.125rem] rounded-lg overflow-hidden shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

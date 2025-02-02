@@ -22,7 +22,7 @@ const Home = () => {
       {/* about section */}
       <About />
       {/* scetion title my projects */}
-      <div className="flex justify-center my-[100px]">
+      <div className="flex justify-center mt-[120px] mb-[50px]">
         <SectionTitle title="MY PROJECTS" />
       </div>
       {/* project cmponents */}
