@@ -7,7 +7,7 @@ export default function StatsSection() {
           {/* Stat 1 */}
           <div>
             <h2 className="text-6xl font-bold text-blue-600">94%</h2>
-            <p className="mt-4 text-lg">
+            <p className="mt-4 text-gray-200 text-lg">
               Web Development skills
               <br />
               gained in my Development life
@@ -16,7 +16,7 @@ export default function StatsSection() {
           {/* Stat 2 */}
           <div>
             <h2 className="text-6xl font-bold  text-blue-600">12+</h2>
-            <p className="mt-4 text-lg">
+            <p className="mt-4 text-gray-200 text-lg">
               Provide Programming
               <br />
               language & Library
@@ -25,7 +25,7 @@ export default function StatsSection() {
           {/* Stat 3 */}
           <div>
             <h2 className="text-6xl font-bold  text-blue-600">10+</h2>
-            <p className="mt-4 text-lg">
+            <p className="mt-4 text-gray-200 text-lg">
               Projects I participated in
               <br />
               my Development life

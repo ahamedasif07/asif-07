@@ -17,16 +17,16 @@ const Hero = () => {
     });
   }, []);
   return (
-    <div className="max-w-screen-2xl mx-auto">
+    <div className="max-w-screen-2xl  mx-auto">
       <div className="relative hero overflow-hidden">
         {/* Bubbles Component */}
 
         {/* Hero Content */}
-        <section className="py-8 content overflow-hidden">
+        <section className=" mb-9  overflow-hidden">
           <div className="">
-            <div className="md:flex justify-between  items-center">
+            <div className="md:flex justify-between min-h-[680px]   items-center">
               {/* Left Section: Text */}
-              <div className="md:w-1/2 mx-auto px-4 md:px-0  md:mt-[120px] md:ml-[68px] lg:pl-[85px] text-center lg:text-left md:text-left">
+              <div className="md:w-1/2 mx-auto px-4 md:px-0  md:mt-[80px] md:ml-[68px] lg:pl-[85px] text-center lg:text-left md:text-left">
                 <h1 className="text-4xl lg:text-5xl font-bold text-[#1A4576]">
                   Hi, I'm Asif Hosen
                 </h1>
@@ -68,12 +68,12 @@ const Hero = () => {
               {/* Right Section: Image */}
               <div
                 data-aos="zoom-in"
-                className="flex md:w-1/2 justify-center md:ml-[150px] mt-10 lg:mt-0 relative"
+                className="flex md:w-1/2 justify-center md:ml-[120px] overflow-hidden lg:mt-0 relative"
               >
                 <div className="absolute inset-0 mt-[130px] md:mr-[26px] flex justify-center items-center">
-                  <div className="md:w-[300px] w-[250px] mt-[170px] md:mt-[200px] md:ml-[20px] h-[250px] md:h-[300px] rounded-full bg-[#275298] animate-pulseLight"></div>
+                  <div className="md:w-[300px] w-[250px]  mt-[160px] md:mt-[200px] md:ml-[20px] h-[250px] md:h-[300px] rounded-full bg-[#275298] animate-pulseLight"></div>
                 </div>
-                <div className="md:w-[450px]  w-[350px] h-[350px] md:h-[450px]">
+                <div className="md:w-[470px]  w-[350px] h-[350px] md:h-[470px]">
                   <Image
                     src={asifImage}
                     alt="Asif Hosen"

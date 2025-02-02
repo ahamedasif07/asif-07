@@ -73,7 +73,7 @@ const About = () => {
               <ImageComparisonSlider />
             </div>
           </div>
-          <div className="lg:w-1/2 w-full   p-4">
+          <div className="lg:w-1/2 w-full   py-4">
             <div className="flex flex-shrink-0 flex-col gap-2 md:flex-row">
               <button
                 onClick={() => setActiveSection("education")}
@@ -103,7 +103,7 @@ const About = () => {
                 <div>
                   {/* <h3 className="text-lg font-semibold">Experience Details</h3>
                   <p>Worked as a Frontend Developer at XYZ Company.</p> */}
-                  <p className="text-[14px] ">
+                  <p className="text-[14px] text-gray-200">
                     I'm a CSE student with over three years + of web development
                     experience. As a creative person and project leader, I've
                     been dedicated to learning various programming languages and
@@ -123,7 +123,7 @@ const About = () => {
                             <FaBook />
                           </p>
                           <div data-aos={aosEffects[index % aosEffects.length]}>
-                            <h3 className="text-[15px] font-semibold text-gray-100">
+                            <h3 className="text-[15px] font-semibold text-gray-200">
                               {education.schoolName}
                             </h3>
                             <p className="text-[12px] my-[3px] text-blue-600 ">
@@ -143,7 +143,7 @@ const About = () => {
                   <div>
                     {/* <h3 className="text-lg font-semibold">Experience Details</h3>
                   <p>Worked as a Frontend Developer at XYZ Company.</p> */}
-                    <p className="text-[14px] ">
+                    <p className="text-[14px] text-gray-200">
                       I'm a CST student with a 4-year Diploma in Computer
                       Science and Technology. As class CR, I lead with
                       creativity and innovation, focusing on pursuing a BSC in
@@ -169,7 +169,7 @@ const About = () => {
                             <div
                               data-aos={aosEffects[index % aosEffects.length]}
                             >
-                              <h3 className="text-[15px] font-semibold text-gray-100">
+                              <h3 className="text-[15px] font-semibold text-gray-200">
                                 {experience.work}
                               </h3>
                               <p className="text-[12px] my-[3px] text-blue-600 ">
