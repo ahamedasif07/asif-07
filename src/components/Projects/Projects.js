@@ -54,7 +54,7 @@ const Projects = () => {
   return (
     <div className="md:px-[140px]">
       <div className="max-w-screen-2xl  py-[60px] mx-auto ">
-        <div className="grid place-items-center items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 ">
+        <div className="grid place-items-center items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 px-4 md:px-0">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project}></ProjectCard>
           ))}
