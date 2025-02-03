@@ -10,6 +10,7 @@ const Projects = () => {
       projectName: "Gorur Ghash",
       projectDescription:
         "A modern e-commerce platform built with React.js and Tailwind CSS, featuring a fully responsive design, product filtering, and a seamless checkout experience.",
+      LiveLink: "https://project-gorur-ghash-d7b9.vercel.app/",
     },
     {
       id: 2,
@@ -18,6 +19,7 @@ const Projects = () => {
       projectName: "Diagram",
       projectDescription:
         "An advanced online store using React.js with a user-friendly UI, integrated payment gateway, and optimized performance for a smooth shopping experience.",
+      LiveLink: "http://ak-asif-diagram.surge.sh",
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ const Projects = () => {
       projectName: "Sultan Dine",
       projectDescription:
         "A visually appealing restaurant website created with React.js, featuring an interactive menu, reservation system, and engaging animations for a dynamic user experience.",
+      LiveLink: "https://ak-asif-sultan-dine.surge.sh/",
     },
     {
       id: 4,
@@ -33,6 +36,7 @@ const Projects = () => {
       projectName: "Gorur Ghash",
       projectDescription:
         "A modern e-commerce platform built with React.js and Tailwind CSS, featuring a fully responsive design, product filtering, and a seamless checkout experience.",
+      LiveLink: "https://project-gorur-ghash-d7b9.vercel.app/",
     },
     {
       id: 5,
@@ -41,6 +45,7 @@ const Projects = () => {
       projectName: "Diagram",
       projectDescription:
         "An advanced online store using React.js with a user-friendly UI, integrated payment gateway, and optimized performance for a smooth shopping experience.",
+      LiveLink: "http://ak-asif-diagram.surge.sh",
     },
     {
       id: 6,
@@ -48,6 +53,7 @@ const Projects = () => {
       projectName: "Sultan Dine",
       projectDescription:
         "A visually appealing restaurant website created with React.js, featuring an interactive menu, reservation system, and engaging animations for a dynamic user experience.",
+      LiveLink: "https://project-gorur-ghash-d7b9.vercel.app/",
     },
   ];
 

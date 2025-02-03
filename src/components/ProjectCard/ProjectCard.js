@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function ProjectCard({ project }) {
-  const { projectName, projectDescription, image } = project;
+  const { projectName, projectDescription, image, LiveLink } = project;
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -43,13 +44,15 @@ export default function ProjectCard({ project }) {
         >
           {projectDescription}
         </p>
-        <button
-          className={`mt-4 px-4 py-2 text-gray-200 font-bold text-lg bg-blue-500 rounded-md transition-opacity duration-500 ${
-            isHovered ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          Read more
-        </button>
+        <a href={LiveLink} target="_blank">
+          <button
+            className={`mt-4 px-4 py-2 text-gray-200 font-bold text-lg bg-blue-500 rounded-md transition-opacity duration-500 ${
+              isHovered ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            View
+          </button>
+        </a>
       </div>
     </div>
   );
