@@ -1,29 +1,48 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 
 const skills = [
-  { name: "Photoshop", level: "90%" },
-  { name: "HTML5", level: "85%" },
-  { name: "Wordpress", level: "60%" },
-  { name: "jQuery", level: "75%" },
-  { name: "CSS3", level: "80%" },
-  { name: "PHP", level: "68%" },
+  { name: "HTML", level: 93 },
+  { name: "CSS", level: 85 },
+  { name: "TailwindCSS", level: 92 },
+  { name: "JavaScript", level: 70 },
+  { name: "React.js", level: 88 },
+  { name: "Next.js", level: 65 },
+  { name: "GitHub", level: 85 },
+  { name: "Figma", level: 90 },
 ];
 
 const SkillsSection = () => {
+  const [progress, setProgress] = useState(
+    skills.map(() => 0) // Initial state with all progress set to 0
+  );
+
+  useEffect(() => {
+    // Trigger all animations simultaneously after a small delay
+    const timer = setTimeout(() => {
+      setProgress(skills.map((skill) => skill.level)); // Set all progress values at once
+    }, 400); // Adjust delay as needed
+
+    return () => clearTimeout(timer); // Clean up timer
+  }, []);
+
   return (
-    <section className=" text-white py-6">
-      <div className="max-w-screen-2xl mx-auto md:px-[140px] px-4 text-center">
-        <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
+    <section className="text-white ">
+      <div className="max-w-screen-2xl py-[40px] md:px-[140px] mx-auto px-4 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
           {skills.map((skill, index) => (
             <div key={index} className="text-left">
-              <div className="flex justify-between items-center mb-2">
+              <div className="flex justify-between items-center mb-3">
                 <span className="text-lg font-medium">{skill.name}</span>
-                <span className="text-lg font-medium">{skill.level}</span>
+                <span className="text-lg font-medium">{progress[index]}%</span>
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-[10px]">
+              <div className="w-full bg-gray-700 rounded-full h-[9px]">
                 <div
-                  className="bg-blue-500 h-[10px] rounded-full"
-                  style={{ width: skill.level }}
+                  className="bg-blue-500 h-[9px] rounded-full"
+                  style={{
+                    width: `${progress[index]}%`,
+                    transition: "width 1s ease-in-out",
+                  }}
                 ></div>
               </div>
             </div>
