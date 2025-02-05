@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import ImageComparisonSlider from "@/components/imageCompareSlider/ImageCompareSlider";
 import Projects from "@/components/Projects/Projects";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
+import SkillsSection from "@/components/Skills/SkillsSection";
 import StatsSection from "@/components/StateSection/StateSection";
 import React from "react";
 
@@ -28,6 +29,14 @@ const Home = () => {
       {/* project cmponents */}
       <div>
         <Projects />
+      </div>
+      {/* my Title*/}
+      <div className="flex justify-center mt-[70px] mb-[50px]">
+        <SectionTitle title="MY SKILLS" />
+      </div>
+      {/* skils section */}
+      <div>
+        <SkillsSection />
       </div>
     </div>
   );
