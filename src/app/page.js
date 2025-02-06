@@ -5,6 +5,7 @@ import Projects from "@/components/Projects/Projects";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import SkillsSection from "@/components/Skills/SkillsSection";
 import StatsSection from "@/components/StateSection/StateSection";
+import TestimonialSlider from "@/components/TestiminiolSlider/TestimonialSlider";
 import React from "react";
 
 const Home = () => {
@@ -37,6 +38,12 @@ const Home = () => {
       {/* skils section */}
       <div>
         <SkillsSection />
+      </div>
+      <div className="flex justify-center mt-[90px] pb-[60px]">
+        <SectionTitle title="IT EXPERT INSIGHTS" />
+      </div>
+      <div>
+        <TestimonialSlider />
       </div>
     </div>
   );
