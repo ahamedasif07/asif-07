@@ -1,4 +1,5 @@
 import About from "@/components/about/About";
+import ContactForm from "@/components/ContactFrom/ContactFrom";
 import Hero from "@/components/Hero";
 import ImageComparisonSlider from "@/components/imageCompareSlider/ImageCompareSlider";
 import Projects from "@/components/Projects/Projects";
@@ -44,6 +45,16 @@ const Home = () => {
       </div>
       <div>
         <TestimonialSlider />
+      </div>
+      {/* contact title */}
+
+      <div className="flex justify-center mt-[120px] pb-[60px]">
+        <SectionTitle title="CONTACT ME" />
+      </div>
+
+      {/* contsct from */}
+      <div>
+        <ContactForm />
       </div>
     </div>
   );
