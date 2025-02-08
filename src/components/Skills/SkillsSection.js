@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const skills = [
   { name: "HTML", level: 93 },
@@ -29,6 +30,9 @@ const SkillsSection = () => {
   return (
     <section className="text-white ">
       <div className="max-w-screen-2xl py-[40px] md:px-[140px] mx-auto px-4 text-center">
+        <div className="flex justify-center mt-[35px] mb-[50px]">
+          <SectionTitle title="MY SKILLS" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
           {skills.map((skill, index) => (
             <div key={index} className="text-left">

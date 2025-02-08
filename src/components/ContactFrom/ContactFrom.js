@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -21,9 +22,12 @@ const ContactForm = () => {
 
   return (
     <div className="md:mx-[140px] px-4 ">
+      <div className="flex justify-center mt-[115px] pb-[55px]">
+        <SectionTitle title="CONTACT ME" />
+      </div>
       <div className=" flex flex-col max-w-screen-2xl items-center justify-center py-5 ">
         <form
-          className="bg-gray-800 border-2 border-blue-600 bg-transparent  p-6 rounded-lg shadow-lg w-full max-w-[800px] "
+          className="bg-gray-800 border-2 border-blue-600 bg-transparent  p-10 rounded-lg shadow-lg w-full max-w-[800px] "
           onSubmit={handleSubmit}
         >
           <div className="mb-4">

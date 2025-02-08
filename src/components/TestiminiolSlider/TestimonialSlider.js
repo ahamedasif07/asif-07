@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const testimonials = [
   {
@@ -43,6 +44,9 @@ const testimonials = [
 export default function TestimonialSlider() {
   return (
     <div className="max-w-screen-2xl md:px-[140px] px-4 mx-auto">
+      <div className="flex justify-center mt-[90px] pb-[60px]">
+        <SectionTitle title="IT EXPERT INSIGHTS" />
+      </div>
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}

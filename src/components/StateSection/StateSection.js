@@ -32,7 +32,7 @@ export default function StatsSection() {
 
     animateStat(setWebDevSkill, 94, 25); // 94% Web Dev skill
     animateStat(setLanguages, 12, 100); // 12+ Languages
-    animateStat(setProjects, 10, 120); // 10+ Projects
+    animateStat(setProjects, 17, 120); // 10+ Projects
   }, []);
 
   return (
