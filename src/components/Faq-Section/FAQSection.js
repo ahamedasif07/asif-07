@@ -38,9 +38,9 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="px-[140px]  mt-[50px] ">
+    <div className="md:px-[140px] px-4 mt-[50px] pb-[40px] ">
       <section className=" bg-[#0A0A0A]  ">
-        <div className=" max-w-screen-2xl px-6 py-10 mx-auto">
+        <div className=" max-w-screen-2xl  py-10 mx-auto">
           <div className="flex justify-center pb-[25px] ">
             <SectionTitle title="FAQ" />
           </div>

@@ -2,18 +2,17 @@
 import React, { useEffect, useState } from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
-const skills = [
-  { name: "HTML", level: 93 },
-  { name: "CSS", level: 85 },
-  { name: "TailwindCSS", level: 92 },
-  { name: "JavaScript", level: 70 },
-  { name: "React.js", level: 88 },
-  { name: "Next.js", level: 65 },
-  { name: "GitHub", level: 85 },
-  { name: "Figma", level: 90 },
-];
-
 const SkillsSection = () => {
+  const skills = [
+    { name: "HTML", level: 93 },
+    { name: "CSS", level: 85 },
+    { name: "TailwindCSS", level: 92 },
+    { name: "JavaScript", level: 70 },
+    { name: "React.js", level: 88 },
+    { name: "Next.js", level: 65 },
+    { name: "GitHub", level: 85 },
+    { name: "Figma", level: 90 },
+  ];
   const [progress, setProgress] = useState(
     skills.map(() => 0) // Initial state with all progress set to 0
   );
@@ -22,7 +21,7 @@ const SkillsSection = () => {
     // Trigger all animations simultaneously after a small delay
     const timer = setTimeout(() => {
       setProgress(skills.map((skill) => skill.level)); // Set all progress values at once
-    }, 400); // Adjust delay as needed
+    }, 350); // Adjust delay as needed
 
     return () => clearTimeout(timer); // Clean up timer
   }, []);

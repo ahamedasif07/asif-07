@@ -34,25 +34,39 @@ const ContactForm = () => {
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-5">
-            <h2 className="px-4 py-[10px] border-[2px] border-blue-600">
-              <h3 className="text-gray-400 text-[26px] pb-[6px] flex justify-center">
-                <MdOutlineEmail />
-              </h3>
-              ahamedasif01729@gmail.com
-            </h2>
+            {/* Email */}
+            <a href="mailto:ahamedasif01729@gmail.com">
+              <h2 className="px-4 text-center py-[10px] border-[2px] border-blue-600 cursor-pointer">
+                <h3 className="text-gray-400 text-[26px] pb-[6px] flex justify-center">
+                  <MdOutlineEmail />
+                </h3>
+                ahamedasif01729@gmail.com
+              </h2>
+            </a>
 
-            <h2 className="px-4 py-[10px] border-[2px] border-blue-600">
-              <h3 className="text-gray-400 text-[26px] pb-[6px] flex justify-center">
-                <FaGithub />
-              </h3>
-              ahamedasif01729@gmail.com
-            </h2>
-            <h2 className="px-4 py-[10px] border-[2px] border-blue-400">
-              <h3 className="text-gray-400 text-[26px] pb-[6px] flex justify-center">
-                <FaWhatsapp />
-              </h3>
-              ahamedasif01729@gmail.com
-            </h2>
+            {/* GitHub */}
+            <a
+              href="https://github.com/ahamedasif07"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h2 className="px-4 py-[10px] text-center border-[2px] border-blue-600 cursor-pointer">
+                <h3 className="text-gray-400 text-[26px] pb-[6px] flex justify-center">
+                  <FaGithub />
+                </h3>
+                ahamedasif07
+              </h2>
+            </a>
+
+            {/* WhatsApp */}
+            <a href="tel:+8801729149634">
+              <h2 className="px-4 text-center py-[10px] border-[2px] border-blue-600 cursor-pointer">
+                <h3 className="text-gray-400 text-[26px] pb-[6px] flex justify-center">
+                  <FaWhatsapp />
+                </h3>
+                +8801729149634
+              </h2>
+            </a>
           </div>
           <div>
             <div className="mb-4">
