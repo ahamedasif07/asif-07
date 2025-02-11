@@ -55,14 +55,16 @@ const NavBar = () => {
             {/* Desktop Menu */}
             <div className="md:block hidden">
               <ul className="flex items-center gap-7">
-                {["Home", "About", "Skills", "Projects"].map((item) => (
-                  <li
-                    key={item}
-                    className="text-[17px] font-semibold pb-2 text-transparent bg-gradient-to-r from-[#1A5685] to-[#63c7ee] bg-clip-text hover:scale-105 transition-transform duration-300 transform-origin-center"
-                  >
-                    {item}
-                  </li>
-                ))}
+                {["Home", "About", "Projects", "Skills", "Contact"].map(
+                  (item) => (
+                    <li
+                      key={item}
+                      className="text-[17px] font-semibold pb-2 text-transparent bg-gradient-to-r from-[#1A5685] to-[#63c7ee] bg-clip-text hover:scale-105 transition-transform duration-300 transform-origin-center"
+                    >
+                      {item}
+                    </li>
+                  )
+                )}
               </ul>
             </div>
 
