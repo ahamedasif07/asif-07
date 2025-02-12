@@ -17,7 +17,7 @@ const Home = () => {
       {/* hero components */}
       <Hero />
       {/*socal media  */}
-      <div className="absolute right-[60px] md:right-[115px] top-[300px] ">
+      <div className="absolute right-[60px] md:right-[115px] top-[100px] md:top-[280px] ">
         <SocalMedia />
       </div>
 

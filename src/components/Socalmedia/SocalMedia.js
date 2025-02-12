@@ -6,7 +6,7 @@ const SocalMedia = () => {
       <div className="">
         <div className="flex flex-col gap-[10px] fixed z-20 border-[2px] p-2 border-blue-600 ">
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/share/19sqccZkUf/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -17,7 +17,7 @@ const SocalMedia = () => {
             />
           </a>
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/in/asif-hosen-87269832b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -28,7 +28,7 @@ const SocalMedia = () => {
             />
           </a>
           <a
-            href="https://wa.me/your-number"
+            href="https://wa.me/8801729149634"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -38,8 +38,9 @@ const SocalMedia = () => {
               className="w-[26px] h-[26px]"
             />
           </a>
+
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/ahamed_asif_07/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -50,7 +51,7 @@ const SocalMedia = () => {
             />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/ahamedasif07"
             target="_blank"
             rel="noopener noreferrer"
           >
