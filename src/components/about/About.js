@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import ImageComparisonSlider from "../imageCompareSlider/ImageCompareSlider";
 import { FaBook } from "react-icons/fa";
@@ -66,18 +67,18 @@ const About = () => {
   }, []);
 
   return (
-    <div className="md:px-[140px] px-4">
+    <div className="md:px-[140px] px-4 overflow-hidden">
       <div className="max-w-screen-2xl mx-auto overflow-hidden">
         <div className="flex justify-center mt-[120px] mb-[60px]">
           <SectionTitle title="ABOUT ME" />
         </div>
         <div className="flex lg:flex-row flex-col   md:justify-between justify-center items-start gap-[80px] w-full">
-          <div className=" lg:w-1/2 w-full  ">
+          <div data-aos="fade-right" className=" lg:w-1/2 w-full  ">
             <div className=" flex-shrink-0  mx-auto md:mx-0 justify-center items-center ">
               <ImageComparisonSlider />
             </div>
           </div>
-          <div className="lg:w-1/2 w-full   py-4">
+          <div data-aos="fade-left" className="lg:w-1/2 w-full   py-4">
             <div className="flex flex-shrink-0 flex-col gap-2 md:flex-row">
               <button
                 onClick={() => setActiveSection("education")}

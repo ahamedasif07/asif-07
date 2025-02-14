@@ -1,8 +1,20 @@
+"use client";
 import React from "react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Animation duration in milliseconds
+      offset: 100, // Distance to start the animation
+      easing: "ease-in-out", // Animation easing
+      once: true, // Whether animation should happen once or every scroll
+    });
+  }, []);
   const projects = [
     {
       id: 1,
@@ -59,12 +71,15 @@ const Projects = () => {
   ];
 
   return (
-    <div className="md:px-[140px]">
+    <div className="md:px-[140px] overflow-hidden">
       <div className="max-w-screen-2xl  py-[60px] mx-auto ">
         <div className="flex justify-center mt-[80px] mb-[60px]">
           <SectionTitle title="MY PROJECTS" />
         </div>
-        <div className="grid place-items-center items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 px-4 md:px-0">
+        <div
+          data-aos="fade-up"
+          className="grid place-items-center items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 px-4 md:px-0"
+        >
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project}></ProjectCard>
           ))}

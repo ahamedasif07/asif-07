@@ -2,6 +2,9 @@
 import React, { useEffect, useState } from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const SkillsSection = () => {
   const skills = [
     { name: "HTML", level: 93 },
@@ -26,13 +29,25 @@ const SkillsSection = () => {
     return () => clearTimeout(timer); // Clean up timer
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Animation duration in milliseconds
+      offset: 100, // Distance to start the animation
+      easing: "ease-in-out", // Animation easing
+      once: true, // Whether animation should happen once or every scroll
+    });
+  }, []);
+
   return (
     <section className="text-white ">
       <div className="max-w-screen-2xl py-[40px] md:px-[140px] mx-auto px-4 text-center">
         <div className="flex justify-center mt-[35px] mb-[50px]">
           <SectionTitle title="MY SKILLS" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
+        <div
+          data-aos="fade-up"
+          className="grid grid-cols-1 md:grid-cols-2  gap-8"
+        >
           {skills.map((skill, index) => (
             <div key={index} className="text-left">
               <div className="flex justify-between items-center mb-3">
