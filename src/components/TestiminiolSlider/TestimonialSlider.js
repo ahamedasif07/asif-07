@@ -73,7 +73,7 @@ export default function TestimonialSlider() {
                   alt={testimonial.name}
                   height={64}
                   width={64}
-                  className="w-16 h-16 rounded-full mx-auto border-2 border-blue-600 hover:border-yellow-500"
+                  className="w-16 h-16 rounded-full mx-auto border-2 border-blue-600 hover:border-blue-800"
                 />
               </div>
               <h3 className="text-lg font-semibold mt-8">{testimonial.name}</h3>
