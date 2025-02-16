@@ -13,7 +13,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       {/* hero components */}
       <Hero />
       {/*socal media  */}

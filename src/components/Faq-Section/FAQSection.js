@@ -1,6 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -8,6 +10,14 @@ const FAQSection = () => {
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Animation duration in milliseconds
+      offset: 100, // Distance to start the animation
+      easing: "ease-in-out", // Animation easing
+      once: true, // Whether animation should happen once or every scroll
+    });
+  }, []);
 
   const faqs = [
     {
@@ -48,6 +58,7 @@ const FAQSection = () => {
           <div className="mt-12 space-y-6">
             {faqs.map((faq, index) => (
               <div
+                data-aos="fade-up"
                 key={index}
                 className="border-2 border-gray-100 rounded-lg dark:border-gray-700"
               >

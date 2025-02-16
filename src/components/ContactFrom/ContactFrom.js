@@ -1,12 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaGithub, FaGrimace } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactForm = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Animation duration in milliseconds
+      offset: 100, // Distance to start the animation
+      easing: "ease-in-out", // Animation easing
+      once: true, // Whether animation should happen once or every scroll
+    });
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,7 +38,10 @@ const ContactForm = () => {
       <div className="flex justify-center mt-[115px] pb-[55px]">
         <SectionTitle title="CONTACT ME" />
       </div>
-      <div className=" flex flex-col max-w-screen-2xl items-center justify-center py-5 ">
+      <div
+        data-aos="fade-up"
+        className=" flex flex-col max-w-screen-2xl items-center justify-center py-5 "
+      >
         <form
           className="bg-gray-800 border-2 flex md:flex-row flex-col gap-5 md:gap-[40px] items-center border-blue-600 bg-transparent p-5 md:p-10 rounded-lg shadow-lg w-full max-w-[800px] "
           onSubmit={handleSubmit}
