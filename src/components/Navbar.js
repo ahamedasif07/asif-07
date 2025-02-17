@@ -9,22 +9,12 @@ const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 50) {
-        setIsScrolled(true);
-        setTimeout(() => setIsFixed(true), 300); // Fix navbar after smooth transition
-      } else {
-        setIsScrolled(false);
-        setIsFixed(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <div className="md:px-[100px] px-4">
@@ -55,16 +45,22 @@ const NavBar = () => {
             {/* Desktop Menu */}
             <div className="md:block hidden">
               <ul className="flex items-center gap-7">
-                {["Home", "About", "Projects", "Skills", "Contact"].map(
-                  (item) => (
-                    <li
-                      key={item}
-                      className="text-[17px] font-semibold pb-2 text-transparent bg-gradient-to-r from-[#1A5685] to-[#63c7ee] bg-clip-text hover:scale-105 transition-transform duration-300 transform-origin-center"
-                    >
-                      {item}
-                    </li>
-                  )
-                )}
+                {[
+                  { name: "Home", id: "hero" },
+                  { name: "About", id: "about" },
+                  { name: "Projects", id: "projects" },
+                  { name: "Skills", id: "skills" },
+                  { name: "Contact", id: "contact" },
+                  { name: "FAQ", id: "faq" },
+                ].map((item) => (
+                  <li
+                    key={item.id}
+                    className="text-[17px] font-semibold pb-2 text-transparent bg-gradient-to-r from-[#1A5685] to-[#63c7ee] bg-clip-text hover:scale-105 transition-transform duration-300 transform-origin-center cursor-pointer"
+                    onClick={() => handleScroll(item.id)}
+                  >
+                    {item.name}
+                  </li>
+                ))}
               </ul>
             </div>
 

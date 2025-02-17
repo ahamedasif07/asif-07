@@ -13,47 +13,38 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="relative overflow-hidden">
-      {/* hero components */}
+    <div className="relative">
       <Hero />
-      {/*socal media  */}
-      <div className="absolute right-[60px] md:right-[115px] top-[100px] md:top-[280px] ">
+
+      <div className="absolute right-[60px] md:right-[115px] top-[100px] md:top-[280px]">
         <SocalMedia />
       </div>
 
-      {/* stats section */}
-      <div className="mt-[30px]">
+      <div className="mt-[30px]" id="stats">
         <StatsSection />
       </div>
-      {/* section title */}
 
-      {/* about section */}
-      <About />
-      {/* scetion title my projects */}
+      <div id="about">
+        <About />
+      </div>
 
-      {/* project cmponents */}
-      <div>
+      <div id="projects">
         <Projects />
       </div>
-      {/* my Title*/}
 
-      {/* skils section */}
-      <div>
+      <div id="skills">
         <SkillsSection />
       </div>
 
       <div>
         <TestimonialSlider />
       </div>
-      {/* contact title */}
 
-      {/* contsct from */}
-      <div>
+      <div id="contact">
         <ContactForm />
       </div>
 
-      {/* faq section */}
-      <div>
+      <div id="faq">
         <FAQSection />
       </div>
     </div>

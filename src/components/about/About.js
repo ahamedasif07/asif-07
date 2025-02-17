@@ -67,7 +67,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="md:px-[140px] px-4 overflow-hidden">
+    <div id="About" className="md:px-[140px] px-4 overflow-hidden">
       <div className="max-w-screen-2xl mx-auto overflow-hidden">
         <div className="flex justify-center mt-[120px] mb-[60px]">
           <SectionTitle title="ABOUT ME" />
