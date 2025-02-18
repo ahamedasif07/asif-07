@@ -26,7 +26,7 @@ const Hero = () => {
           <div className="">
             <div className="md:flex justify-between min-h-[680px]   items-center">
               {/* Left Section: Text */}
-              <div className="md:w-1/2 mx-auto px-4 md:px-0  md:mt-[80px] md:ml-[68px] lg:pl-[85px] text-center lg:text-left md:text-left">
+              <div className="md:w-1/2 mx-auto  px-4 md:px-0  md:mt-[80px] md:ml-[68px] lg:pl-[85px] text-center lg:text-left md:text-left">
                 <h1 className="text-4xl lg:text-5xl font-bold text-[#235692]">
                   Hi, I'm Asif Hosen
                 </h1>
@@ -37,7 +37,7 @@ const Hero = () => {
                   >
                     <img
                       className="flex  justify-center ml-[30px] md:ml-0"
-                      src="https://readme-typing-svg.demolab.com?font=Roboto&weight=900&size=46&pause=1000&color=2563EB&width=472&height=65&lines=Front-End+Developer"
+                      src="https://readme-typing-svg.demolab.com?font=Roboto&weight=900&sie=46&pause=1000&color=2563EB&width=472&height=65&lines=Front-End+Developer"
                       alt="Typing SVG"
                     />
                   </a>
@@ -67,7 +67,7 @@ const Hero = () => {
 
               {/* Right Section: Image */}
               <div
-                data-aos="zoom-in"
+                data-aos="oom-in"
                 className="flex md:w-1/2 justify-center md:ml-[120px] overflow-hidden lg:mt-0 relative"
               >
                 <div className="absolute inset-0 mt-[130px] md:mr-[26px] flex justify-center items-center">
@@ -77,7 +77,7 @@ const Hero = () => {
                   <Image
                     src={asifImage}
                     alt="Asif Hosen"
-                    className="relative z-10 md:ml-[0px] mt-[40px]  rounded-lg "
+                    className="relative -10 md:ml-[0px] mt-[40px]  rounded-lg "
                   />
                 </div>
               </div>

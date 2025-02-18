@@ -6,25 +6,29 @@ import { RiMenu3Fill } from "react-icons/ri";
 
 const NavBar = () => {
   const [togolMenu, setTogolMenu] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
 
-  const handleScroll = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+  // Scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="md:px-[100px] px-4">
       <div
         className={`max-w-screen-2xl mx-auto transition-all duration-500 ${
           isFixed
-            ? "fixed top-0 left-0 right-0 z-[1000] bg-[#0A0A0A] shadow-lg "
-            : isScrolled
-            ? "translate-y-[-20px] opacity-0"
-            : "translate-y-0"
+            ? "fixed top-0 left-0 right-0 z-[1000] bg-[#0A0A0A] shadow-lg"
+            : ""
         }`}
       >
         <div
@@ -56,7 +60,12 @@ const NavBar = () => {
                   <li
                     key={item.id}
                     className="text-[17px] font-semibold pb-2 text-transparent bg-gradient-to-r from-[#1A5685] to-[#63c7ee] bg-clip-text hover:scale-105 transition-transform duration-300 transform-origin-center cursor-pointer"
-                    onClick={() => handleScroll(item.id)}
+                    onClick={() => {
+                      document.getElementById(item.id)?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }}
                   >
                     {item.name}
                   </li>
@@ -65,24 +74,40 @@ const NavBar = () => {
             </div>
 
             {/* Mini Menu */}
-            <div
-              className={`absolute top-[58px] right-[35px] z-[1000] py-4 px-12 rounded-lg shadow-xl transform transition-all duration-500 ease-in-out ${
-                togolMenu
-                  ? "opacity-100 bg-black md:bg-transparent translate-y-0 scale-100"
-                  : "opacity-0 translate-y-[-20px] scale-95 pointer-events-none"
-              }`}
-            >
-              <div className="md:hidden block">
-                <ul className="flex flex-col gap-4">
-                  {["Home", "About", "Skills", "Projects"].map((item) => (
-                    <li
-                      key={item}
-                      className="text-[17px] text-center font-semibold pb-2 text-transparent bg-gradient-to-r from-[#1A5685] to-[#63c7ee] bg-clip-text hover:scale-105 transition-transform duration-300 transform-origin-center"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            <div className="z-[10000]">
+              <div
+                className={`absolute top-[58px] right-[35px] z-[10000] py-4 px-12 rounded-lg shadow-xl transform transition-all duration-500 ease-in-out ${
+                  togolMenu
+                    ? "opacity-100 bg-green-600 md:bg-transparent translate-y-0 scale-100"
+                    : "opacity-0 translate-y-[-20px] scale-95 pointer-events-none"
+                }`}
+              >
+                <div className="md:hidden block">
+                  <ul className="flex flex-col gap-4">
+                    {[
+                      { name: "Home", id: "hero" },
+                      { name: "About", id: "about" },
+                      { name: "Projects", id: "projects" },
+                      { name: "Skills", id: "skills" },
+                      { name: "Contact", id: "contact" },
+                      { name: "FAQ", id: "faq" },
+                    ].map((item) => (
+                      <li
+                        onClick={() => {
+                          document.getElementById(item.id)?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                          setTogolMenu(false);
+                        }}
+                        key={item.id}
+                        className="text-[17px] text-center font-semibold pb-2 text-transparent bg-gradient-to-r from-[#1A5685] to-[#63c7ee] bg-clip-text hover:scale-105 transition-transform duration-300 transform-origin-center"
+                      >
+                        {item.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
 

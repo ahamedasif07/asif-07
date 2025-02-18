@@ -13,7 +13,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="relative">
+    <div id="hero" className="relative">
       <Hero />
 
       <div className="absolute right-[60px] md:right-[115px] top-[100px] md:top-[280px]">

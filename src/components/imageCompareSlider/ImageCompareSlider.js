@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import beforeImage from "../../../public/assets/asif13_image-.png";
+import affterImage from "../../../public/assets/asif-work.jpg";
 
 const ImageComparisonSlider = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -45,7 +46,7 @@ const ImageComparisonSlider = () => {
           }}
         >
           <Image
-            src={beforeImage}
+            src={affterImage}
             alt="After Image"
             layout="fill"
             objectFit="contain" // Prevents cropping and centers the image
