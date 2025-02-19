@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import aLogo from "../../public/assets/alogo.svg";
 import Image from "next/image";
 import { RiMenu3Fill } from "react-icons/ri";
+import { RxCross2 } from "react-icons/rx";
 
 const NavBar = () => {
   const [togolMenu, setTogolMenu] = useState(false);
@@ -74,11 +75,11 @@ const NavBar = () => {
             </div>
 
             {/* Mini Menu */}
-            <div className="z-[10000]">
+            <div className="z-[10000] ">
               <div
-                className={`absolute top-[58px] right-[35px] z-[10000] py-4 px-12 rounded-lg shadow-xl transform transition-all duration-500 ease-in-out ${
+                className={`absolute top-[62px] w-full right-[5px] z-[10000] py-4 rounded-lg shadow-xl transform transition-all duration-500 ease-in-out ${
                   togolMenu
-                    ? "opacity-100 bg-green-600 md:bg-transparent translate-y-0 scale-100"
+                    ? "opacity-100 bg-black md:bg-transparent translate-y-0 scale-100"
                     : "opacity-0 translate-y-[-20px] scale-95 pointer-events-none"
                 }`}
               >
@@ -117,7 +118,7 @@ const NavBar = () => {
               className="mb-2 md:hidden block cursor-pointer"
             >
               <h2 className="text-blue-500 text-[22px]">
-                <RiMenu3Fill />
+                {togolMenu ? <RxCross2 /> : <RiMenu3Fill />}
               </h2>
             </div>
           </div>
