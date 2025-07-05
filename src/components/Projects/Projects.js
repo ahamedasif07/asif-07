@@ -44,12 +44,11 @@ const Projects = () => {
     },
     {
       id: 4,
-      image:
-        "https://i.ibb.co.com/20sRZcg7/459318469-510183361732201-973057694240494391-n.jpg",
-      projectName: "Gorur Ghash",
+      image: "https://i.ibb.co/bMbKVHSG/Screenshot-45.png",
+      projectName: "Frish Gosory",
       projectDescription:
-        "A modern e-commerce platform built with React.js and Tailwind CSS, featuring a fully responsive design, product filtering, and a seamless checkout experience.",
-      LiveLink: "https://project-gorur-ghash-d7b9.vercel.app/",
+        "Frish Gosory — A modern e-commerce shop template built with React.js and Tailwind CSS, offering fresh grocery products, responsive design, category filtering, and a smooth shopping experience.",
+      LiveLink: "https://project-fresh-grocery.vercel.app/",
     },
     {
       id: 5,
