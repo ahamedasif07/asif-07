@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -16,37 +15,53 @@ const SkillsSection = () => {
     { name: "GitHub", level: 85 },
     { name: "Figma", level: 90 },
   ];
-  const [progress, setProgress] = useState(
-    skills.map(() => 0) // Initial state with all progress set to 0
-  );
 
-  useEffect(() => {
-    // Trigger all animations simultaneously after a small delay
-    const timer = setTimeout(() => {
-      setProgress(skills.map((skill) => skill.level)); // Set all progress values at once
-    }, 350); // Adjust delay as needed
-
-    return () => clearTimeout(timer); // Clean up timer
-  }, []);
+  const [progress, setProgress] = useState(skills.map(() => 0));
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     AOS.init({
-      duration: 800, // Animation duration in milliseconds
-      offset: 100, // Distance to start the animation
-      easing: "ease-in-out", // Animation easing
-      once: true, // Whether animation should happen once or every scroll
+      duration: 800,
+      offset: 100,
+      easing: "ease-in-out",
+      once: false,
     });
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Trigger animation when in view
+          setProgress(skills.map((skill) => skill.level));
+        } else {
+          // Reset progress when out of view
+          setProgress(skills.map(() => 0));
+        }
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of section is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
   return (
-    <section className="text-white ">
+    <section ref={sectionRef} className="text-white">
       <div className="max-w-screen-2xl py-[40px] md:px-[140px] mx-auto px-4 text-center">
         <div className="flex justify-center mt-[35px] mb-[50px]">
           <SectionTitle title="MY SKILLS" />
         </div>
         <div
           data-aos="fade-up"
-          className="grid grid-cols-1 md:grid-cols-2  gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {skills.map((skill, index) => (
             <div key={index} className="text-left">

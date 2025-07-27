@@ -58,14 +58,25 @@ const Hero = () => {
                 </p>
                 <div className="flex flex-col gap-2 md:flex-row mt-6">
                   <button
+                    onClick={() => {
+                      const el = document.getElementById("contact");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     href="#contact"
                     className="px-6 py-3 w-full bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-500 transition duration-300"
                   >
                     Contact Me
                   </button>
                   <button
-                    href="#projects"
-                    className="md:ml-4 ml-0h px-6 py-3 w-full border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300"
+                    onClick={() => {
+                      const el = document.getElementById("projects");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="md:ml-4 ml-0 px-6 py-3 w-full border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300"
                   >
                     My Projects
                   </button>

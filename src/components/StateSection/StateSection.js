@@ -1,42 +1,70 @@
 "use client";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function StatsSection() {
+  const sectionRef = useRef(null);
+
+  const [webDevSkill, setWebDevSkill] = useState(0);
+  const [languages, setLanguages] = useState(0);
+  const [projects, setProjects] = useState(0);
+
+  // Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 800,
       offset: 100,
       easing: "ease-in-out",
-      once: true,
+      once: false,
     });
   }, []);
 
-  // State for the stats
-  const [webDevSkill, setWebDevSkill] = useState(0);
-  const [languages, setLanguages] = useState(0);
-  const [projects, setProjects] = useState(0);
-
+  // Animate when in view, reset when out of view
   useEffect(() => {
-    const animateStat = (setter, targetValue, speed) => {
-      let count = 0;
-      const interval = setInterval(() => {
-        count += 1;
-        setter(count);
-        if (count >= targetValue) {
-          clearInterval(interval);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          animateStat(setWebDevSkill, 94, 25);
+          animateStat(setLanguages, 12, 100);
+          animateStat(setProjects, 17, 120);
+        } else {
+          // Reset when leaving view
+          setWebDevSkill(0);
+          setLanguages(0);
+          setProjects(0);
         }
-      }, speed);
-    };
+      },
+      {
+        threshold: 0.4,
+      }
+    );
 
-    animateStat(setWebDevSkill, 94, 25); // 94% Web Dev skill
-    animateStat(setLanguages, 12, 100); // 12+ Languages
-    animateStat(setProjects, 17, 120); // 10+ Projects
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
   }, []);
 
+  const animateStat = (setter, targetValue, speed) => {
+    let count = 0;
+    const interval = setInterval(() => {
+      count += 1;
+      setter(count);
+      if (count >= targetValue) {
+        clearInterval(interval);
+      }
+    }, speed);
+  };
+
   return (
-    <section className="bg-gradient-to-b from-black via-gray-900 to-black py-16">
+    <section
+      ref={sectionRef}
+      className="bg-gradient-to-b from-black via-gray-900 to-black py-16"
+    >
       <div className="max-w-screen-2xl md:px-[70px] mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center text-white">
           {/* Stat 1 */}

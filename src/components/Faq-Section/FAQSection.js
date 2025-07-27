@@ -48,10 +48,10 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="md:px-[140px] px-4 mt-[50px] pb-[40px] ">
-      <section className=" bg-[#0A0A0A]  ">
-        <div className=" max-w-screen-2xl  py-10 mx-auto">
-          <div className="flex justify-center pb-[25px] ">
+    <div className="md:px-[140px] px-4 mt-[50px] pb-[40px]">
+      <section className="bg-[#0A0A0A]">
+        <div className="max-w-screen-2xl py-10 mx-auto">
+          <div className="flex justify-center pb-[25px]">
             <SectionTitle title="FAQ" />
           </div>
 
@@ -66,13 +66,13 @@ const FAQSection = () => {
                   className="flex items-center justify-between w-full p-6"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <h1 className="font-semibold text-gray-700 dark:text-white">
+                  <h1 className="font-semibold text-gray-700 dark:text-white text-left">
                     {faq.question}
                   </h1>
                   <span
-                    className={`rounded-full flex items-center justify-center w-8 h-8 transition-all ${
+                    className={`rounded-full flex items-center justify-center w-8 h-8 transition-all duration-300 ${
                       openIndex === index
-                        ? "text-gray-400 bg-gray-200"
+                        ? "text-gray-400 bg-gray-200 rotate-180"
                         : "text-white bg-blue-500"
                     }`}
                   >
@@ -102,14 +102,19 @@ const FAQSection = () => {
                   </span>
                 </button>
 
-                {openIndex === index && faq.answer && (
-                  <>
-                    <hr className="border-gray-200 dark:border-gray-700" />
-                    <p className="p-6 text-sm text-gray-500 dark:text-gray-300">
-                      {faq.answer}
-                    </p>
-                  </>
-                )}
+                {/* Animated Answer Section */}
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    openIndex === index
+                      ? "max-h-[500px] bg-blue-600 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <hr className="border-gray-200 dark:border-gray-700" />
+                  <p className="p-6 text-md black dark:text-gray-200">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
