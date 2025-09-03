@@ -10,6 +10,7 @@ import SocalMedia from "@/components/Socalmedia/SocalMedia";
 import StatsSection from "@/components/StateSection/StateSection";
 import TestimonialSlider from "@/components/TestiminiolSlider/TestimonialSlider";
 import React from "react";
+import { Toaster } from "react-hot-toast";
 
 const Home = () => {
   return (
@@ -41,6 +42,7 @@ const Home = () => {
       </div>
 
       <div id="contact">
+        <Toaster position="top-right" reverseOrder={false} />
         <ContactForm />
       </div>
 

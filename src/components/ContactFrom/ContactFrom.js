@@ -7,6 +7,7 @@ import { FaGithub, FaWhatsapp } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import emailjs from "emailjs-com";
+import toast from "react-hot-toast";
 
 const ContactForm = () => {
   useEffect(() => {
@@ -32,20 +33,24 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const loadingToastId = toast.loading("Sending message..."); // Show loading toast
+
     emailjs
       .send(
-        "service_iv1ndgt", // ✅ Your Service ID
-        "template_od2fe1g", // ✅ Your Template ID
+        "service_iv1ndgt",
+        "template_od2fe1g",
         formData,
-        "jbdXemyw4PRjLc14f" // ⚠️ Replace this with your EmailJS Public Key from Account > API Keys
+        "jbdXemyw4PRjLc14f"
       )
       .then(
         (result) => {
-          alert("✅ Message sent successfully!");
+          toast.dismiss(loadingToastId); // Remove loading
+          toast.success("Message sent successfully! ✅");
           setFormData({ name: "", email: "", phone: "", message: "" });
         },
         (error) => {
-          alert("❌ Failed to send message. Please try again.");
+          toast.dismiss(loadingToastId); // Remove loading
+          toast.error("Failed to send message. Please try again ❌");
           console.error(error.text);
         }
       );
