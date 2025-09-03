@@ -3,20 +3,21 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { MdOutlineEmail } from "react-icons/md";
-import { FaGithub, FaGrimace } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaWhatsapp } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800, // Animation duration in milliseconds
-      offset: 100, // Distance to start the animation
-      easing: "ease-in-out", // Animation easing
-      once: true, // Whether animation should happen once or every scroll
+      duration: 800,
+      offset: 100,
+      easing: "ease-in-out",
+      once: true,
     });
   }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,7 +31,24 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    emailjs
+      .send(
+        "service_iv1ndgt", // ✅ Your Service ID
+        "template_od2fe1g", // ✅ Your Template ID
+        formData,
+        "jbdXemyw4PRjLc14f" // ⚠️ Replace this with your EmailJS Public Key from Account > API Keys
+      )
+      .then(
+        (result) => {
+          alert("✅ Message sent successfully!");
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        },
+        (error) => {
+          alert("❌ Failed to send message. Please try again.");
+          console.error(error.text);
+        }
+      );
   };
 
   return (
@@ -41,12 +59,13 @@ const ContactForm = () => {
         </div>
         <div
           data-aos="fade-up"
-          className=" flex flex-col max-w-screen-2xl items-center justify-center py-5 "
+          className="flex flex-col max-w-screen-2xl items-center justify-center py-5"
         >
           <form
-            className="bg-gray-800 border-2 flex md:flex-row flex-col gap-5 md:gap-[40px] items-center border-blue-600 bg-transparent p-5 md:p-10 rounded-lg shadow-lg w-full max-w-[800px] "
+            className="bg-gray-800 border-2 flex md:flex-row flex-col gap-5 md:gap-[40px] items-center border-blue-600 bg-transparent p-5 md:p-10 rounded-lg shadow-lg w-full max-w-[800px]"
             onSubmit={handleSubmit}
           >
+            {/* Left side contacts */}
             <div className="flex flex-col gap-5">
               {/* Email */}
               <a href="mailto:ahamedasif01729@gmail.com">
@@ -82,11 +101,11 @@ const ContactForm = () => {
                 </div>
               </a>
             </div>
+
+            {/* Right side form */}
             <div>
               <div className="mb-4">
-                <label className="block text-gray-200">
-                  <span className="text-gray-200">Name</span>
-                </label>
+                <label className="block text-gray-200">Name</label>
                 <input
                   type="text"
                   name="name"
@@ -96,6 +115,7 @@ const ContactForm = () => {
                   className="w-full p-3 bg-gray-800 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-gray-200">Email</label>
@@ -120,6 +140,7 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
+
               <div className="mt-4">
                 <label className="block text-gray-200">Message</label>
                 <textarea
@@ -130,6 +151,7 @@ const ContactForm = () => {
                   className="w-full p-3 h-32 bg-gray-800 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 ></textarea>
               </div>
+
               <button
                 type="submit"
                 className="w-full mt-4 py-3 bg-blue-500 text-gray-200 rounded-lg text-lg hover:bg-blue-600 transition-all"
