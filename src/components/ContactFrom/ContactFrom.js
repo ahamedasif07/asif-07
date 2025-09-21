@@ -75,7 +75,7 @@ const ContactForm = () => {
               {/* Email */}
               <a href="mailto:ahamedasif01729@gmail.com">
                 <div className="px-4 text-center py-[10px] border-[2px] border-blue-600 cursor-pointer">
-                  <h3 className="text-gray-400 text-[26px] pb-[6px] flex justify-center">
+                  <h3 className="text-gray-200 text-[26px] pb-[6px] flex justify-center">
                     <MdOutlineEmail />
                   </h3>
                   ahamedasif01729@gmail.com
@@ -89,7 +89,7 @@ const ContactForm = () => {
                 rel="noopener noreferrer"
               >
                 <div className="px-4 py-[10px] text-center border-[2px] border-blue-600 cursor-pointer">
-                  <h3 className="text-gray-400 text-[26px] pb-[6px] flex justify-center">
+                  <h3 className="text-gray-200 text-[26px] pb-[6px] flex justify-center">
                     <FaGithub />
                   </h3>
                   ahamedasif07
@@ -99,7 +99,7 @@ const ContactForm = () => {
               {/* WhatsApp */}
               <a href="tel:+8801729149634">
                 <div className="px-4 text-center py-[10px] border-[2px] border-blue-600 cursor-pointer">
-                  <h3 className="text-gray-400 text-[26px] pb-[6px] flex justify-center">
+                  <h3 className="text-gray-200 text-[26px] pb-[6px] flex justify-center">
                     <FaWhatsapp />
                   </h3>
                   +8801729149634
