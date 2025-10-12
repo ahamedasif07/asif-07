@@ -52,12 +52,11 @@ const Projects = () => {
     },
     {
       id: 5,
-      image:
-        "https://i.ibb.co.com/gLFCzqmL/324268690-3333959940256153-6463376740799483701-n.jpg",
-      projectName: "Diagram",
+      image: "https://i.ibb.co.com/gbPXf1T5/Screenshot-20.png",
+      projectName: "Scapesync",
       projectDescription:
-        "An advanced online store using React.js with a user-friendly UI, integrated payment gateway, and optimized performance for a smooth shopping experience.",
-      LiveLink: "http://ak-asif-diagram.surge.sh",
+        "This project is a fully responsive Next.js application converted from a Figma design. The goal was to transform the static UI into a dynamic, production-ready web app with user authentication (Login & Registration) and API connectivity. It ensures a smooth user experience with modern design, optimized performance, and clean code structure.",
+      LiveLink: "https://scapesync-mauve.vercel.app/",
     },
     {
       id: 6,

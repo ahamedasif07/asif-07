@@ -23,6 +23,8 @@ export default function ProjectCard({ project }) {
           isHovered ? "scale-125" : ""
         }`}
       />
+      {/* Dark overlay layer */}
+      <div className="absolute inset-0 bg-gray-600 bg-opacity-50"></div>
 
       <div
         className={`absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent transition-transform duration-500 ease-in-out ${
