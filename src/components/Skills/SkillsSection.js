@@ -55,7 +55,7 @@ const SkillsSection = () => {
 
   return (
     <section ref={sectionRef} className="text-white">
-      <div className="max-w-screen-2xl py-[40px] md:px-[140px] mx-auto px-4 text-center">
+      <div className="lg:px-[120px] md:px-[80px] sm:px[30px] px-4  mx-auto py-[40px] text-center">
         <div className="flex justify-center mt-[35px] mb-[50px]">
           <SectionTitle title="MY SKILLS" />
         </div>

@@ -63,10 +63,10 @@ export default function StatsSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-black via-gray-900 to-black py-16"
+      className="bg-gradient-to-b  from-black via-gray-900 to-black py-16"
     >
-      <div className="max-w-screen-2xl md:px-[70px] mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center text-white">
+      <div className="">
+        <div className="grid grid-cols-1 lg:px-[120px] md:px-[80px] sm:px[30px] px-4  mx-auto border border-blue-600 sm:grid-cols-3 gap-8 text-center text-white">
           {/* Stat 1 */}
           <div data-aos="zoom-in">
             <h2 className="text-6xl font-bold text-blue-600">{webDevSkill}%</h2>

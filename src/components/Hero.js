@@ -18,7 +18,7 @@ const Hero = () => {
     });
   }, []);
   return (
-    <div className="max-w-screen-2xl  mx-auto">
+    <div className="lg:px-[120px] md:px-[80px] sm:px[30px] px-4  mx-auto">
       <div className="relative hero overflow-hidden">
         {/* Bubbles Component */}
 

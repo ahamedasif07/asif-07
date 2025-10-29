@@ -58,13 +58,13 @@ const ContactForm = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="md:mx-[140px] px-4 ">
+      <div className="  ">
         <div className="flex justify-center mt-[115px] pb-[55px]">
           <SectionTitle title="CONTACT ME" />
         </div>
         <div
           data-aos="fade-up"
-          className="flex flex-col max-w-screen-2xl items-center justify-center py-5"
+          className="flex flex-col lg:px-[120px] md:px-[80px] sm:px[30px] px-4  mx-auto border- border-blue-600 items-center justify-center py-5"
         >
           <form
             className="bg-gray-800 border-2 flex md:flex-row flex-col gap-5 md:gap-[40px] items-center border-blue-600 bg-transparent p-5 md:p-10 rounded-lg shadow-lg w-full max-w-[800px]"

@@ -24,9 +24,9 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div className="md:px-[100px] px-4">
+    <div className="lg:px-[120px] md:px-[80px] sm:px[30px] px-4  mx-auto">
       <div
-        className={`max-w-screen-2xl mx-auto transition-all duration-500 ${
+        className={` mx-auto transition-all duration-500 ${
           isFixed
             ? "fixed top-0 left-0 right-0 z-[1000] bg-[#0A0A0A] shadow-lg"
             : ""

@@ -54,7 +54,7 @@ export default function TestimonialSlider() {
     },
   ];
   return (
-    <div className="max-w-screen-2xl md:px-[140px] px-4 mx-auto">
+    <div className="lg:px-[120px] md:px-[80px] sm:px[30px] px-4  mx-auto">
       <div className="flex justify-center mt-[90px] pb-[60px]">
         <SectionTitle title="IT EXPERT INSIGHTS" />
       </div>

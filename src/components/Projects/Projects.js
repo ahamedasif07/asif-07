@@ -69,8 +69,8 @@ const Projects = () => {
   ];
 
   return (
-    <div className="md:px-[140px] overflow-hidden">
-      <div className="max-w-screen-2xl  py-[60px] mx-auto ">
+    <div className="lg:px-[120px] md:px-[80px] sm:px[30px] px-4  mx-auto overflow-hidden">
+      <div className="  py-[60px] mx-auto ">
         <div className="flex justify-center mt-[80px] mb-[60px]">
           <SectionTitle title="MY PROJECTS" />
         </div>
