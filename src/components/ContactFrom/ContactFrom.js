@@ -33,7 +33,7 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const loadingToastId = toast.loading("Sending message..."); // Show loading toast
+    const loadingToastId = toast.loading("Sending message...");
 
     emailjs
       .send(
@@ -44,12 +44,12 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
-          toast.dismiss(loadingToastId); // Remove loading
+          toast.dismiss(loadingToastId);
           toast.success("Message sent successfully! ✅");
           setFormData({ name: "", email: "", phone: "", message: "" });
         },
         (error) => {
-          toast.dismiss(loadingToastId); // Remove loading
+          toast.dismiss(loadingToastId);
           toast.error("Failed to send message. Please try again ❌");
           console.error(error.text);
         }
@@ -57,115 +57,116 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="  ">
-        <div className="flex justify-center mt-[115px] pb-[55px]">
-          <SectionTitle title="CONTACT ME" />
-        </div>
-        <div
-          data-aos="fade-up"
-          className="flex flex-col lg:px-[120px] md:px-[80px] sm:px[30px] px-4  mx-auto border- border-blue-600 items-center justify-center py-5"
+    <div className="flex flex-col w-full justify-center items-center">
+      {/* Section Title */}
+      <div className="flex justify-center mt-[115px] pb-[55px] w-full">
+        <SectionTitle title="CONTACT ME" />
+      </div>
+
+      {/* Contact Form Section */}
+      <div
+        data-aos="fade-up"
+        className="flex flex-col w-full px-4 sm:px-[30px] md:px-[80px] lg:px-[120px] items-center justify-center py-5"
+      >
+        <form
+          className="w-full flex md:flex-row flex-col gap-5 md:gap-[40px] items-center border-2 border-blue-600 bg-transparent p-5 md:p-10 rounded-lg shadow-lg"
+          onSubmit={handleSubmit}
         >
-          <form
-            className="bg-gray-800 border-2 flex md:flex-row flex-col gap-5 md:gap-[40px] items-center border-blue-600 bg-transparent p-5 md:p-10 rounded-lg shadow-lg w-full max-w-[800px]"
-            onSubmit={handleSubmit}
-          >
-            {/* Left side contacts */}
-            <div className="flex flex-col gap-5">
-              {/* Email */}
-              <a href="mailto:ahamedasif01729@gmail.com">
-                <div className="px-4 text-center py-[10px] border-[2px] border-blue-600 cursor-pointer">
-                  <h3 className="text-gray-200 text-[26px] pb-[6px] flex justify-center">
-                    <MdOutlineEmail />
-                  </h3>
-                  ahamedasif01729@gmail.com
-                </div>
-              </a>
+          {/* Left side contacts */}
+          <div className="flex   flex-col gap-5 w-full md:w-1/2">
+            {/* Email */}
+            <a href="mailto:ahamedasif01729@gmail.com">
+              <div className="px-4 text-center py-[10px] border-[2px] border-blue-600 cursor-pointer hover:bg-blue-600/10 transition">
+                <h3 className="text-gray-200 text-[26px] pb-[6px] flex justify-center">
+                  <MdOutlineEmail />
+                </h3>
+                ahamedasif01729@gmail.com
+              </div>
+            </a>
 
-              {/* GitHub */}
-              <a
-                href="https://github.com/ahamedasif07"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="px-4 py-[10px] text-center border-[2px] border-blue-600 cursor-pointer">
-                  <h3 className="text-gray-200 text-[26px] pb-[6px] flex justify-center">
-                    <FaGithub />
-                  </h3>
-                  ahamedasif07
-                </div>
-              </a>
+            {/* GitHub */}
+            <a
+              href="https://github.com/ahamedasif07"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="px-4 py-[10px] text-center border-[2px] border-blue-600 cursor-pointer hover:bg-blue-600/10 transition">
+                <h3 className="text-gray-200 text-[26px] pb-[6px] flex justify-center">
+                  <FaGithub />
+                </h3>
+                ahamedasif07
+              </div>
+            </a>
 
-              {/* WhatsApp */}
-              <a href="tel:+8801729149634">
-                <div className="px-4 text-center py-[10px] border-[2px] border-blue-600 cursor-pointer">
-                  <h3 className="text-gray-200 text-[26px] pb-[6px] flex justify-center">
-                    <FaWhatsapp />
-                  </h3>
-                  +8801729149634
-                </div>
-              </a>
+            {/* WhatsApp */}
+            <a href="tel:+8801729149634">
+              <div className="px-4 text-center py-[10px] border-[2px] border-blue-600 cursor-pointer hover:bg-blue-600/10 transition">
+                <h3 className="text-gray-200 text-[26px] pb-[6px] flex justify-center">
+                  <FaWhatsapp />
+                </h3>
+                +8801729149634
+              </div>
+            </a>
+          </div>
+
+          {/* Right side form */}
+          <div className="w-full md:w-1/2">
+            <div className="mb-4">
+              <label className="block text-gray-200">Name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full p-3 bg-gray-800 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
             </div>
 
-            {/* Right side form */}
-            <div>
-              <div className="mb-4">
-                <label className="block text-gray-200">Name</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-gray-200">Email</label>
                 <input
-                  type="text"
-                  name="name"
+                  type="email"
+                  name="email"
                   required
-                  value={formData.name}
+                  value={formData.email}
                   onChange={handleChange}
                   className="w-full p-3 bg-gray-800 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-200">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-gray-800 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-200">Phone Number</label>
-                  <input
-                    type="text"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-gray-800 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-              </div>
-
-              <div className="mt-4">
-                <label className="block text-gray-200">Message</label>
-                <textarea
-                  name="message"
+              <div>
+                <label className="block text-gray-200">Phone Number</label>
+                <input
+                  type="text"
+                  name="phone"
                   required
-                  value={formData.message}
+                  value={formData.phone}
                   onChange={handleChange}
-                  className="w-full p-3 h-32 bg-gray-800 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                ></textarea>
+                  className="w-full p-3 bg-gray-800 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
               </div>
-
-              <button
-                type="submit"
-                className="w-full mt-4 py-3 bg-blue-500 text-gray-200 rounded-lg text-lg hover:bg-blue-600 transition-all"
-              >
-                Send Message
-              </button>
             </div>
-          </form>
-        </div>
+
+            <div className="mt-4">
+              <label className="block text-gray-200">Message</label>
+              <textarea
+                name="message"
+                required
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full p-3 h-32 bg-gray-800 text-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full mt-4 py-3 bg-blue-500 text-gray-200 rounded-lg text-lg hover:bg-blue-600 transition-all"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

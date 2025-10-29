@@ -1,20 +1,22 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import SectionTitle from "../SectionTitle/SectionTitle";
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Projects = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800, // Animation duration in milliseconds
-      offset: 100, // Distance to start the animation
-      easing: "ease-in-out", // Animation easing
-      once: true, // Whether animation should happen once or every scroll
+      duration: 800,
+      offset: 100,
+      easing: "ease-in-out",
+      once: true,
     });
   }, []);
+
+  const [filter, setFilter] = useState("all"); // 'all' or 'live'
+
   const projects = [
     {
       id: 1,
@@ -24,6 +26,7 @@ const Projects = () => {
       projectDescription:
         "A modern e-commerce platform built with React.js and Tailwind CSS, featuring a fully responsive design, product filtering, and a seamless checkout experience.",
       LiveLink: "https://project-gorur-ghash-d7b9.vercel.app/",
+      isLive: false,
     },
     {
       id: 2,
@@ -33,14 +36,16 @@ const Projects = () => {
       projectDescription:
         "An advanced online store using React.js with a user-friendly UI, integrated payment gateway, and optimized performance for a smooth shopping experience.",
       LiveLink: "http://ak-asif-diagram.surge.sh",
+      isLive: false,
     },
     {
       id: 3,
-      image: "https://i.ibb.co.com/Df6FMcvQ/image-resize.jpg",
-      projectName: "Sultan Dine",
+      image: "https://i.ibb.co.com/qYcSsnQj/Screenshot-31.png",
+      projectName: "Sharif Bering",
       projectDescription:
-        "A visually appealing restaurant website created with React.js, featuring an interactive menu, reservation system, and engaging animations for a dynamic user experience.",
-      LiveLink: "https://ak-asif-sultan-dine.surge.sh/",
+        "An e-commerce website for mechanical products built with React.js, featuring product listings, shopping cart functionality, and a smooth user experience for buyers and sellers.",
+      LiveLink: "https://sharifbearingbd.sbmoffice.net/",
+      isLive: true,
     },
     {
       id: 4,
@@ -49,6 +54,7 @@ const Projects = () => {
       projectDescription:
         "Frish Gosory — A modern e-commerce shop template built with React.js and Tailwind CSS, offering fresh grocery products, responsive design, category filtering, and a smooth shopping experience.",
       LiveLink: "https://project-fresh-grocery.vercel.app/",
+      isLive: false,
     },
     {
       id: 5,
@@ -57,28 +63,60 @@ const Projects = () => {
       projectDescription:
         "This project is a fully responsive Next.js application converted from a Figma design. The goal was to transform the static UI into a dynamic, production-ready web app with user authentication (Login & Registration) and API connectivity. It ensures a smooth user experience with modern design, optimized performance, and clean code structure.",
       LiveLink: "https://scapesync-mauve.vercel.app/",
+      isLive: false,
     },
     {
       id: 6,
-      image: "https://i.ibb.co.com/Df6FMcvQ/image-resize.jpg",
+      image: "https://i.ibb.co/Df6FMcvQ/image-resize.jpg",
       projectName: "Sultan Dine",
       projectDescription:
         "A visually appealing restaurant website created with React.js, featuring an interactive menu, reservation system, and engaging animations for a dynamic user experience.",
       LiveLink: "https://project-gorur-ghash-d7b9.vercel.app/",
+      isLive: false,
     },
   ];
 
+  // Filter projects based on selected filter
+  const filteredProjects =
+    filter === "all" ? projects : projects.filter((p) => p.isLive);
+
   return (
-    <div className="lg:px-[120px] md:px-[80px] sm:px[30px] px-4  mx-auto overflow-hidden">
-      <div className="  py-[60px] mx-auto ">
-        <div className="flex justify-center mt-[80px] mb-[60px]">
+    <div className="lg:px-[120px] md:px-[80px] sm:px-[30px] px-4 mx-auto overflow-hidden">
+      <div className="py-[60px] mx-auto">
+        <div className="flex justify-center mt-[80px] mb-[20px]">
           <SectionTitle title="MY PROJECTS" />
         </div>
+
+        {/* Filter Buttons */}
+        <div className="flex justify-center gap-4 mt-20 mb-8">
+          <button
+            className={`px-6 py-2 rounded-lg ${
+              filter === "all"
+                ? "bg-blue-600 hover:bg-blue-700 text-white"
+                : "bg-gray-200 text-gray-800"
+            }`}
+            onClick={() => setFilter("all")}
+          >
+            All Projects
+          </button>
+          <button
+            className={`px-6 py-2 rounded-lg ${
+              filter === "live"
+                ? "bg-blue-600 hover:bg-blue-700 text-white"
+                : "bg-gray-200 text-gray-800"
+            }`}
+            onClick={() => setFilter("live")}
+          >
+            Live Projects
+          </button>
+        </div>
+
+        {/* Project Grid */}
         <div
           data-aos="fade-up"
           className="grid place-items-center items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 px-4 md:px-0"
         >
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <ProjectCard key={project.id} project={project}></ProjectCard>
           ))}
         </div>
