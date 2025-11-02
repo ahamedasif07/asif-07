@@ -86,7 +86,7 @@ const Projects = () => {
       projectName: "Sailor",
       projectDescription:
         "Sailor — A fully functional fashion e-commerce website currently in development. It features modern UI/UX design, category filtering, and React.js-based performance optimization.",
-      LiveLink: "https://vercel.com/rxasif/seilor-project-cu2a", // Add real link when ready
+      LiveLink: "https://seilor-project-cu2a.vercel.app/", // Add real link when ready
       isLive: false,
       isWorking: true,
     },
