@@ -15,7 +15,7 @@ const Projects = () => {
     });
   }, []);
 
-  const [filter, setFilter] = useState("all"); // 'all' or 'live'
+  const [filter, setFilter] = useState("all"); // 'all', 'live', or 'working'
 
   const projects = [
     {
@@ -27,6 +27,7 @@ const Projects = () => {
         "A modern e-commerce platform built with React.js and Tailwind CSS, featuring a fully responsive design, product filtering, and a seamless checkout experience.",
       LiveLink: "https://project-gorur-ghash-d7b9.vercel.app/",
       isLive: false,
+      isWorking: false,
     },
     {
       id: 2,
@@ -37,6 +38,7 @@ const Projects = () => {
         "An advanced online store using React.js with a user-friendly UI, integrated payment gateway, and optimized performance for a smooth shopping experience.",
       LiveLink: "http://ak-asif-diagram.surge.sh",
       isLive: false,
+      isWorking: false,
     },
     {
       id: 3,
@@ -46,6 +48,7 @@ const Projects = () => {
         "An e-commerce website for mechanical products built with React.js, featuring product listings, shopping cart functionality, and a smooth user experience for buyers and sellers.",
       LiveLink: "https://sharifbearingbd.sbmoffice.net/",
       isLive: true,
+      isWorking: false,
     },
     {
       id: 4,
@@ -55,6 +58,7 @@ const Projects = () => {
         "Frish Gosory — A modern e-commerce shop template built with React.js and Tailwind CSS, offering fresh grocery products, responsive design, category filtering, and a smooth shopping experience.",
       LiveLink: "https://project-fresh-grocery.vercel.app/",
       isLive: false,
+      isWorking: false,
     },
     {
       id: 5,
@@ -64,6 +68,7 @@ const Projects = () => {
         "This project is a fully responsive Next.js application converted from a Figma design. The goal was to transform the static UI into a dynamic, production-ready web app with user authentication (Login & Registration) and API connectivity. It ensures a smooth user experience with modern design, optimized performance, and clean code structure.",
       LiveLink: "https://scapesync-mauve.vercel.app/",
       isLive: false,
+      isWorking: false,
     },
     {
       id: 6,
@@ -73,12 +78,27 @@ const Projects = () => {
         "A visually appealing restaurant website created with React.js, featuring an interactive menu, reservation system, and engaging animations for a dynamic user experience.",
       LiveLink: "https://project-gorur-ghash-d7b9.vercel.app/",
       isLive: false,
+      isWorking: false,
+    },
+    {
+      id: 7,
+      image: "https://i.ibb.co.com/fV87XKLh/Screenshot-33.png",
+      projectName: "Sailor",
+      projectDescription:
+        "Sailor — A fully functional fashion e-commerce website currently in development. It features modern UI/UX design, category filtering, and React.js-based performance optimization.",
+      LiveLink: "https://vercel.com/rxasif/seilor-project-cu2a", // Add real link when ready
+      isLive: false,
+      isWorking: true,
     },
   ];
 
-  // Filter projects based on selected filter
+  // ✅ Filter logic
   const filteredProjects =
-    filter === "all" ? projects : projects.filter((p) => p.isLive);
+    filter === "all"
+      ? projects
+      : filter === "live"
+      ? projects.filter((p) => p.isLive)
+      : projects.filter((p) => p.isWorking);
 
   return (
     <div className="lg:px-[120px] md:px-[80px] sm:px-[30px] px-4 mx-auto overflow-hidden">
@@ -99,6 +119,7 @@ const Projects = () => {
           >
             All Projects
           </button>
+
           <button
             className={`px-6 py-2 rounded-lg ${
               filter === "live"
@@ -108,6 +129,17 @@ const Projects = () => {
             onClick={() => setFilter("live")}
           >
             Live Projects
+          </button>
+
+          <button
+            className={`px-6 py-2 rounded-lg ${
+              filter === "working"
+                ? "bg-blue-600 hover:bg-blue-700 text-white"
+                : "bg-gray-200 text-gray-800"
+            }`}
+            onClick={() => setFilter("working")}
+          >
+            Working Projects
           </button>
         </div>
 
