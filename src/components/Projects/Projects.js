@@ -31,15 +31,15 @@ const Projects = () => {
     },
     {
       id: 2,
-      image:
-        "https://i.ibb.co.com/gLFCzqmL/324268690-3333959940256153-6463376740799483701-n.jpg",
-      projectName: "Diagram",
+      image: "https://i.ibb.co.com/fV87XKLh/Screenshot-33.png",
+      projectName: "Sailor",
       projectDescription:
-        "An advanced online store using React.js with a user-friendly UI, integrated payment gateway, and optimized performance for a smooth shopping experience.",
-      LiveLink: "http://ak-asif-diagram.surge.sh",
+        "Sailor — A fully functional fashion e-commerce website currently in development. It features modern UI/UX design, category filtering, and React.js-based performance optimization.",
+      LiveLink: "https://seilor-project-cu2a.vercel.app/", // Add real link when ready
       isLive: false,
-      isWorking: false,
+      isWorking: true,
     },
+
     {
       id: 3,
       image: "https://i.ibb.co.com/qYcSsnQj/Screenshot-31.png",
@@ -76,19 +76,20 @@ const Projects = () => {
       projectName: "Sultan Dine",
       projectDescription:
         "A visually appealing restaurant website created with React.js, featuring an interactive menu, reservation system, and engaging animations for a dynamic user experience.",
-      LiveLink: "https://project-gorur-ghash-d7b9.vercel.app/",
+      LiveLink: "https://ak-asif-sultan-dine.surge.sh/",
       isLive: false,
       isWorking: false,
     },
     {
       id: 7,
-      image: "https://i.ibb.co.com/fV87XKLh/Screenshot-33.png",
-      projectName: "Sailor",
+      image:
+        "https://i.ibb.co.com/gLFCzqmL/324268690-3333959940256153-6463376740799483701-n.jpg",
+      projectName: "Diagram",
       projectDescription:
-        "Sailor — A fully functional fashion e-commerce website currently in development. It features modern UI/UX design, category filtering, and React.js-based performance optimization.",
-      LiveLink: "https://seilor-project-cu2a.vercel.app/", // Add real link when ready
+        "An advanced online store using React.js with a user-friendly UI, integrated payment gateway, and optimized performance for a smooth shopping experience.",
+      LiveLink: "http://ak-asif-diagram.surge.sh",
       isLive: false,
-      isWorking: true,
+      isWorking: false,
     },
   ];
 
