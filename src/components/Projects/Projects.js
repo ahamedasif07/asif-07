@@ -46,7 +46,7 @@ const Projects = () => {
       projectName: "Sharif Bering",
       projectDescription:
         "An e-commerce website for mechanical products built with React.js, featuring product listings, shopping cart functionality, and a smooth user experience for buyers and sellers.",
-      LiveLink: "https://sharifbearingbd.sbmoffice.net/",
+      LiveLink: "https://sbmbd.net/",
       isLive: true,
       isWorking: false,
     },
