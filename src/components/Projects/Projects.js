@@ -109,34 +109,37 @@ const Projects = () => {
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 mt-20 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mt-20 mb-8">
+          {/* All Projects Button */}
           <button
-            className={`px-6 py-2 rounded-lg ${
+            className={`px-6 py-2 rounded-lg border-2 transition-all duration-300 ${
               filter === "all"
-                ? "bg-blue-600 hover:bg-blue-700 text-white"
-                : "bg-gray-200 text-gray-800"
+                ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-500/50"
+                : "bg-black border-blue-600/50 text-white hover:border-blue-500"
             }`}
             onClick={() => setFilter("all")}
           >
             All Projects
           </button>
 
+          {/* Live Projects Button */}
           <button
-            className={`px-6 py-2 rounded-lg ${
+            className={`px-6 py-2 rounded-lg border-2 transition-all duration-300 ${
               filter === "live"
-                ? "bg-blue-600 hover:bg-blue-700 text-white"
-                : "bg-gray-200 text-gray-800"
+                ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-500/50"
+                : "bg-black border-blue-600/50 text-white hover:border-blue-500"
             }`}
             onClick={() => setFilter("live")}
           >
             Live Projects
           </button>
 
+          {/* Working Projects Button */}
           <button
-            className={`px-6 py-2 rounded-lg ${
+            className={`px-6 py-2 rounded-lg border-2 transition-all duration-300 ${
               filter === "working"
-                ? "bg-blue-600 hover:bg-blue-700 text-white"
-                : "bg-gray-200 text-gray-800"
+                ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-500/50"
+                : "bg-black border-blue-600/50 text-white hover:border-blue-500"
             }`}
             onClick={() => setFilter("working")}
           >
